@@ -39,19 +39,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ED7017C81E7D492F00955C99 /* listOfcrashes */ = {
-			isa = PBXGroup;
-			children = (
-				ED7017C91E7D49FF00955C99 /* CrashCell.swift */,
-			);
-			name = listOfcrashes;
-			sourceTree = "<group>";
-		};
 		ED80EF6B1E7C7DEA0066AD83 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EDAFF5F31E7B3C630069F42E /* ViewController.swift */,
 				ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */,
+				EDAFF5F31E7B3C630069F42E /* ViewController.swift */,
 				ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */,
 			);
 			name = controllers;
@@ -76,8 +68,8 @@
 		EDAFF5F01E7B3C630069F42E /* RAT */ = {
 			isa = PBXGroup;
 			children = (
-				ED7017C81E7D492F00955C99 /* listOfcrashes */,
 				ED80EF6B1E7C7DEA0066AD83 /* controllers */,
+				ED7017C91E7D49FF00955C99 /* CrashCell.swift */,
 				EDAFF5F11E7B3C630069F42E /* AppDelegate.swift */,
 				EDAFF5F51E7B3C630069F42E /* Main.storyboard */,
 				EDAFF5F81E7B3C630069F42E /* Assets.xcassets */,

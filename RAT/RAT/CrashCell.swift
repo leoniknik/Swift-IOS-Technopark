@@ -10,6 +10,8 @@ import UIKit
 
 class CrashCell: UITableViewCell {
 
+    @IBOutlet weak var errorCode: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
