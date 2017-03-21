@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE4B50451E818FF60031A2E8 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4B50431E818FF50031A2E8 /* PersonalData.storyboard */; };
 		ED7017C71E7D368F00955C99 /* ListOfCrashesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */; };
 		ED7017CA1E7D49FF00955C99 /* CrashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C91E7D49FF00955C99 /* CrashCell.swift */; };
 		ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE4B50441E818FF60031A2E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PersonalData.storyboard; sourceTree = "<group>"; };
 		ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfCrashesViewController.swift; sourceTree = "<group>"; };
 		ED7017C91E7D49FF00955C99 /* CrashCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashCell.swift; sourceTree = "<group>"; };
 		ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				ED7017C91E7D49FF00955C99 /* CrashCell.swift */,
 				EDAFF5F11E7B3C630069F42E /* AppDelegate.swift */,
 				EDAFF5F51E7B3C630069F42E /* Main.storyboard */,
+				DE4B50431E818FF50031A2E8 /* PersonalData.storyboard */,
 				EDAFF5F81E7B3C630069F42E /* Assets.xcassets */,
 				EDAFF5FD1E7B3C630069F42E /* Info.plist */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDAFF5F91E7B3C630069F42E /* Assets.xcassets in Resources */,
+				DE4B50451E818FF60031A2E8 /* PersonalData.storyboard in Resources */,
 				EDAFF5F71E7B3C630069F42E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +164,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DE4B50431E818FF50031A2E8 /* PersonalData.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE4B50441E818FF60031A2E8 /* Base */,
+			);
+			name = PersonalData.storyboard;
+			sourceTree = "<group>";
+		};
 		EDAFF5F51E7B3C630069F42E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
