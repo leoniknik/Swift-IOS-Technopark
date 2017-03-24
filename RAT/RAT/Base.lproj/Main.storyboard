@@ -44,6 +44,9 @@
                                 <rect key="frame" x="193" y="414" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Регистрация"/>
+                                <connections>
+                                    <segue destination="Dcc-MT-IPb" kind="show" identifier="fromAuthorizationToRegistrationSegue" id="TVQ-0K-SY6"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmD-wK-idF">
                                 <rect key="frame" x="137" y="80" width="101" height="90"/>
@@ -89,7 +92,6 @@
                         <outlet property="registrationButton" destination="jlf-ro-uAP" id="Lwr-aN-C6A"/>
                         <outlet property="registrationLabel" destination="uZM-kh-muw" id="Hjl-D7-qwc"/>
                         <outlet property="vkLogInButton" destination="ajg-a2-LOA" id="aGF-76-B6N"/>
-                        <segue destination="Dcc-MT-IPb" kind="show" identifier="fromAuthorizationToRegistrationSeage" id="c4J-L3-WEa"/>
                         <segue destination="aQk-cO-RcH" kind="show" identifier="fromAuthorizationToListOfVehiclesSeage" id="UCa-j3-MfX"/>
                     </connections>
                 </viewController>
@@ -197,11 +199,20 @@
                                 <rect key="frame" x="55" y="574" width="264" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Зарегистрироваться"/>
+                                <connections>
+                                    <action selector="signUp:" destination="Dcc-MT-IPb" eventType="touchUpInside" id="kVb-9l-Tom"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="PPT-rA-hvx" id="waR-aK-03D"/>
+                        <outlet property="firstnameTextField" destination="Rub-RH-ZKq" id="mJy-vH-gzQ"/>
+                        <outlet property="lastnameTextField" destination="JGi-Vb-ezC" id="9L6-fS-zpo"/>
+                        <outlet property="passwordTextField" destination="RXh-cl-RjK" id="RFw-fu-CZz"/>
+                        <outlet property="phoneTextField" destination="3sN-PK-9M0" id="1vK-pJ-Frr"/>
+                        <outlet property="repeatPasswordTextField" destination="qKv-lJ-HYB" id="Tha-f3-4Cd"/>
                         <segue destination="aQk-cO-RcH" kind="show" identifier="fromRegistrationToListOfVehiclesSeage" id="BBD-Rg-qQo"/>
                     </connections>
                 </viewController>
