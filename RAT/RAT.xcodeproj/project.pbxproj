@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0745CD8C2ED0FF11B72BE510 /* Pods_RAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE690A8CD68DC18A33448A9 /* Pods_RAT.framework */; };
 		DE4B50451E818FF60031A2E8 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4B50431E818FF50031A2E8 /* PersonalData.storyboard */; };
 		ED7017C71E7D368F00955C99 /* ListOfCrashesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */; };
 		ED7017CA1E7D49FF00955C99 /* CrashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C91E7D49FF00955C99 /* CrashCell.swift */; };
@@ -20,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		135D6EF075BA7E7CE17FC353 /* Pods-RAT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.debug.xcconfig"; sourceTree = "<group>"; };
+		1DE690A8CD68DC18A33448A9 /* Pods_RAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		316911728D59B7AF7827F317 /* Pods-RAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.release.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.release.xcconfig"; sourceTree = "<group>"; };
 		DE4B50441E818FF60031A2E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PersonalData.storyboard; sourceTree = "<group>"; };
 		ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfCrashesViewController.swift; sourceTree = "<group>"; };
 		ED7017C91E7D49FF00955C99 /* CrashCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashCell.swift; sourceTree = "<group>"; };
@@ -39,12 +43,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0745CD8C2ED0FF11B72BE510 /* Pods_RAT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D2EE94DFDB7C24B924D27AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				135D6EF075BA7E7CE17FC353 /* Pods-RAT.debug.xcconfig */,
+				316911728D59B7AF7827F317 /* Pods-RAT.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		90BF99C230B9476C6B41C118 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DE690A8CD68DC18A33448A9 /* Pods_RAT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED80EF6B1E7C7DEA0066AD83 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +82,8 @@
 			children = (
 				EDAFF5F01E7B3C630069F42E /* RAT */,
 				EDAFF5EF1E7B3C630069F42E /* Products */,
+				3D2EE94DFDB7C24B924D27AB /* Pods */,
+				90BF99C230B9476C6B41C118 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,9 +126,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDAFF6001E7B3C630069F42E /* Build configuration list for PBXNativeTarget "RAT" */;
 			buildPhases = (
+				78B46BCAD3FDEBE2397EBFCF /* [CP] Check Pods Manifest.lock */,
 				EDAFF5EA1E7B3C620069F42E /* Sources */,
 				EDAFF5EB1E7B3C620069F42E /* Frameworks */,
 				EDAFF5EC1E7B3C620069F42E /* Resources */,
+				EAFB599FB29123A99A98BAE0 /* [CP] Embed Pods Frameworks */,
+				AA7DF25607CC94F6B1724023 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +188,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78B46BCAD3FDEBE2397EBFCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA7DF25607CC94F6B1724023 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RAT/Pods-RAT-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAFB599FB29123A99A98BAE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RAT/Pods-RAT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDAFF5EA1E7B3C620069F42E /* Sources */ = {
@@ -292,6 +367,7 @@
 		};
 		EDAFF6011E7B3C630069F42E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 135D6EF075BA7E7CE17FC353 /* Pods-RAT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RAT/Info.plist;
@@ -304,6 +380,7 @@
 		};
 		EDAFF6021E7B3C630069F42E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 316911728D59B7AF7827F317 /* Pods-RAT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RAT/Info.plist;
