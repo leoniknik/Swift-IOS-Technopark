@@ -45,7 +45,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Регистрация"/>
                                 <connections>
-                                    <segue destination="Dcc-MT-IPb" kind="show" identifier="fromAuthorizationToRegistrationSegue" id="TVQ-0K-SY6"/>
+                                    <segue destination="Dcc-MT-IPb" kind="show" id="6ZP-T2-Shd"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmD-wK-idF">
@@ -102,7 +102,7 @@
         <!--Registration controller-->
         <scene sceneID="dud-pB-APu">
             <objects>
-                <viewController title="Registration controller" id="Dcc-MT-IPb" customClass="RegistrationViewController" sceneMemberID="viewController">
+                <viewController title="Registration controller" id="Dcc-MT-IPb" customClass="RegistrationViewController" customModule="RAT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hBr-YZ-Kkp"/>
                         <viewControllerLayoutGuide type="bottom" id="rE5-YP-gIa"/>
@@ -385,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODL-qt-syK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2840.8000000000002" y="1611.5442278860571"/>
+            <point key="canvasLocation" x="2844" y="1749"/>
         </scene>
         <!--Confirm controller-->
         <scene sceneID="tgK-iP-1q4">

@@ -18,40 +18,16 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     
     @IBAction func signUp(_ sender: Any) {
-        createRequest()
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        //let repeatPassword = repeatPasswordTextField.text
+        let firstname = firstnameTextField.text
+        let lastname = lastnameTextField.text
+        let phone = phoneTextField.text
+         createSignUpRequest(email: email!, password: password!, firstname: firstname!, lastname: lastname!, phone: phone!)
     }
     
-    func createRequest() -> Void {
-        // создаем сессию
-        let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-        // Выходим если не удалось инициировать УРЛ из строки
-        guard let URL = NSURL(string: "https://.../api/signup") else {return}
-        let request = NSMutableURLRequest(url: URL as URL)
-        // Формируем запрос для метода POST
-        request.httpMethod = "POST"
-        //  Устанавливаем заголовки запроса
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        // Само тело запроса
-        let bodyObject = [
-            "email":  "\(emailTextField.text)",
-            "password": "\(passwordTextField.text)",
-            "firstname": "\(firstnameTextField.text)",
-            "lastname": "\(lastnameTextField.text)",
-            "phone": "\(phoneTextField.text)"
-        ]
-        // Устанавливаем тело в запросе
-        request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
-        
-        let task = session.dataTask(with: request as URLRequest, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            if (error == nil) {
-                
-            } else {
-                // Обработка ошибки коннекта
-                print("URL Session Task Failed: %@", error!.localizedDescription);
-            }
-        })
-        task.resume()
+    func createSignUpRequest(email: String, password: String, firstname: String, lastname: String, phone: String) -> Void {
     }
     
     override func viewDidLoad() {
