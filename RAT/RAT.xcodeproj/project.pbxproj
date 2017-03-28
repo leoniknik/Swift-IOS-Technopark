@@ -12,6 +12,7 @@
 		ED7017C71E7D368F00955C99 /* ListOfCrashesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */; };
 		ED7017CA1E7D49FF00955C99 /* CrashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C91E7D49FF00955C99 /* CrashCell.swift */; };
 		ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */; };
+		ED97321D1E8AFCD200FCED3F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97321C1E8AFCD200FCED3F /* Person.swift */; };
 		ED99E5A41E8550260039EBF7 /* ValidatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */; };
 		EDAFF5F21E7B3C630069F42E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFF5F11E7B3C630069F42E /* AppDelegate.swift */; };
 		EDAFF5F41E7B3C630069F42E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFF5F31E7B3C630069F42E /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfCrashesViewController.swift; sourceTree = "<group>"; };
 		ED7017C91E7D49FF00955C99 /* CrashCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashCell.swift; sourceTree = "<group>"; };
 		ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		ED97321C1E8AFCD200FCED3F /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorHelper.swift; sourceTree = "<group>"; };
 		EDAFF5EE1E7B3C630069F42E /* RAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAFF5F11E7B3C630069F42E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			name = controllers;
 			sourceTree = "<group>";
 		};
+		ED9732171E8AFB5D00FCED3F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				ED97321C1E8AFCD200FCED3F /* Person.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		EDAFF5E51E7B3C620069F42E = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		EDAFF5F01E7B3C630069F42E /* RAT */ = {
 			isa = PBXGroup;
 			children = (
+				ED9732171E8AFB5D00FCED3F /* models */,
 				EDC04B101E7F23650065D62E /* helpers */,
 				ED80EF6B1E7C7DEA0066AD83 /* controllers */,
 				ED7017C91E7D49FF00955C99 /* CrashCell.swift */,
@@ -248,6 +259,7 @@
 				EDAFF5F21E7B3C630069F42E /* AppDelegate.swift in Sources */,
 				ED7017CA1E7D49FF00955C99 /* CrashCell.swift in Sources */,
 				ED7017C71E7D368F00955C99 /* ListOfCrashesViewController.swift in Sources */,
+				ED97321D1E8AFCD200FCED3F /* Person.swift in Sources */,
 				ED99E5A41E8550260039EBF7 /* ValidatorHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

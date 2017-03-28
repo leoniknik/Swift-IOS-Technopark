@@ -19,6 +19,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    var person: Person?
     
     @IBAction func signUp(_ sender: Any) {
         let email = emailTextField.text
