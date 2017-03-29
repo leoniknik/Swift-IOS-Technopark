@@ -25,12 +25,12 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listOfCrashesTable.dequeueReusableCell(withIdentifier: "CrashCell") as! CrashCell
-        //cell.errorCode.text = "1234"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "fromListOfCrashesToCrashSeage", sender: nil) // transition
+        self.performSegue(withIdentifier: "fromListOfCrashesToCrashSegue", sender: nil) // transition
+
     }
     
     //data send

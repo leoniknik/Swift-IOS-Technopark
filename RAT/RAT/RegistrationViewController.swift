@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class RegistrationViewController: UIViewController {
 
@@ -19,52 +17,22 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
-    var person: Person?
-    
     @IBAction func signUp(_ sender: Any) {
-        let email = emailTextField.text
-        let password = passwordTextField.text
-        //let repeatPassword = repeatPasswordTextField.text
-        let firstname = firstnameTextField.text
-        let lastname = lastnameTextField.text
-        let phone = phoneTextField.text
-         createSignUpRequest(email: email!, password: password!, firstname: firstname!, lastname: lastname!, phone: phone!)
+        // TODO: проверить вводимые поля
+        Person.instance.email = emailTextField.text!
+        Person.instance.password = passwordTextField.text!
+        Person.instance.firstname = firstnameTextField.text!
+        Person.instance.lastname = lastnameTextField.text!
+        Person.instance.phone = phoneTextField.text!
+        Person.instance.createSignUpRequest()
+        // TODO: проверить зарегались мы или нет, если да то сделать переход на listofVehicles
+        self.performSegue(withIdentifier: "fromRegistrationToListOfVehiclesSegue", sender: nil)
     }
     
-    func createSignUpRequest(email: String, password: String, firstname: String, lastname: String, phone: String) -> Void {
-        
-        let SIGNUP_URL = "http://192.168.1.51:8000/api/signup"
-/*
-        let parameters: Parameters = [
-            "email": email,
-            "password": password,
-            "firstname": firstname,
-            "lastname": lastname,
-            "phone": phone
-        ]
-*/
-        let parameters: Parameters = [
-            "email": "aaaa@mail.ru",
-            "password": "kial",
-            "firstname": "aaa",
-            "lastname": "bbbb",
-            "phone": "123"
-        ]
-        
-        Alamofire.request(SIGNUP_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 }
