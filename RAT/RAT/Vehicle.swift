@@ -12,6 +12,10 @@ import SwiftyJSON
 
 class Vehicle {
     
+    let EDIT_VEHICLE_URL = "http://192.168.1.51:8000/api/edit_vehicle"
+    let GET_LIST_OF_HISTORY_CRASHES_URL = "http://192.168.1.51:8000/api/get_list_of_history_crashes"
+    let GET_LIST_OF_ACTUAL_CRASHES_URL = "http://192.168.1.51:8000/api/get_list_of_actual_crashes"
+    
     var id: Int?
     var VIN: String = ""
     var number: String = ""
@@ -19,9 +23,7 @@ class Vehicle {
     var model: String = ""
     var year: Date?
     
-    let EDIT_VEHICLE_URL = "http://192.168.1.51:8000/api/edit_vehicle"
-    let GET_LIST_OF_HISTORY_CRASHES_URL = "http://192.168.1.51:8000/api/get_list_of_history_crashes"
-    let GET_LIST_OF_ACTUAL_CRASHES_URL = "http://192.168.1.51:8000/api/get_list_of_actual_crashes"
+    var arrayCrashes = Array<Crash>()
     
     func getListOfHistoryCrashesRequest() -> Void {
         
