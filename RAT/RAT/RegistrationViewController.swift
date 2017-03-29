@@ -18,21 +18,21 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     
     @IBAction func signUp(_ sender: Any) {
-        let email = emailTextField.text
-        let password = passwordTextField.text
-        //let repeatPassword = repeatPasswordTextField.text
-        let firstname = firstnameTextField.text
-        let lastname = lastnameTextField.text
-        let phone = phoneTextField.text
-         createSignUpRequest(email: email!, password: password!, firstname: firstname!, lastname: lastname!, phone: phone!)
+        // TODO: проверить вводимые поля
+        Person.instance.email = emailTextField.text!
+        Person.instance.password = passwordTextField.text!
+        Person.instance.firstname = firstnameTextField.text!
+        Person.instance.lastname = lastnameTextField.text!
+        Person.instance.phone = phoneTextField.text!
+        Person.instance.createSignUpRequest()
+        // TODO: проверить зарегались мы или нет, если да то сделать переход на listofVehicles
+        self.performSegue(withIdentifier: "fromRegistrationToListOfVehiclesSegue", sender: nil)
     }
     
-    func createSignUpRequest(email: String, password: String, firstname: String, lastname: String, phone: String) -> Void {
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 }

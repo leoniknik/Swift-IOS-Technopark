@@ -32,6 +32,9 @@
                                 <rect key="frame" x="65" y="363" width="244" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ВОЙТИ"/>
+                                <connections>
+                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qof-NJ-8fM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="РосАвтоТелеметрия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbR-Vq-wgM">
                                 <rect key="frame" x="106" y="178" width="163" height="27"/>
@@ -64,12 +67,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Войти с помощью Facebook"/>
+                                <connections>
+                                    <action selector="facebookLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j0E-RJ-CTW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVD-c2-HeC">
                                 <rect key="frame" x="65" y="539" width="244" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Войти с помощью ВКонтакте"/>
+                                <connections>
+                                    <action selector="vkLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I0H-Cp-XxJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Нет аккаунта?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZM-kh-muw">
                                 <rect key="frame" x="65" y="419" width="114" height="21"/>
@@ -92,7 +101,7 @@
                         <outlet property="registrationButton" destination="jlf-ro-uAP" id="Lwr-aN-C6A"/>
                         <outlet property="registrationLabel" destination="uZM-kh-muw" id="Hjl-D7-qwc"/>
                         <outlet property="vkLogInButton" destination="ajg-a2-LOA" id="aGF-76-B6N"/>
-                        <segue destination="aQk-cO-RcH" kind="show" identifier="fromAuthorizationToListOfVehiclesSeage" id="UCa-j3-MfX"/>
+                        <segue destination="aQk-cO-RcH" kind="show" identifier="fromAuthorizationToListOfVehiclesSegue" id="UCa-j3-MfX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -213,7 +222,7 @@
                         <outlet property="passwordTextField" destination="RXh-cl-RjK" id="RFw-fu-CZz"/>
                         <outlet property="phoneTextField" destination="3sN-PK-9M0" id="1vK-pJ-Frr"/>
                         <outlet property="repeatPasswordTextField" destination="qKv-lJ-HYB" id="Tha-f3-4Cd"/>
-                        <segue destination="aQk-cO-RcH" kind="show" identifier="fromRegistrationToListOfVehiclesSeage" id="BBD-Rg-qQo"/>
+                        <segue destination="aQk-cO-RcH" kind="show" identifier="fromRegistrationToListOfVehiclesSegue" id="BBD-Rg-qQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBc-Iq-jyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,7 +382,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Edy-eL-VOx" id="Lgl-qO-4XN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -479,7 +488,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z6g-T1-TuC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="E31-W7-dnP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E31-W7-dnP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -502,6 +511,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BBD-Rg-qQo"/>
+        <segue reference="UCa-j3-MfX"/>
     </inferredMetricsTieBreakers>
 </document>
