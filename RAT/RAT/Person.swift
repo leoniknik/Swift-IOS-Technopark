@@ -110,5 +110,27 @@ final class Person {
             }
         }
     }
+    
+    func addVehiclesRequest() -> Void {
+        
+        let parameters: Parameters = [
+            "user_id": self.id!,
+            "VIN": self.VIN,
+            "number": self.number,
+            "brand": self.brand,
+            "model": self.model,
+            "year": self.year!,
+        ]
+        
+        Alamofire.request(ADD_VEHICLE_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
 }

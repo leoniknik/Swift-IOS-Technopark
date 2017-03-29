@@ -23,10 +23,12 @@ class Vehicle {
     let GET_LIST_OF_HISTORY_CRASHES_URL = "http://192.168.1.51:8000/api/get_list_of_history_crashes"
     let GET_LIST_OF_ACTUAL_CRASHES_URL = "http://192.168.1.51:8000/api/get_list_of_actual_crashes"
     
+    var arrayCrashs = Array<Crash>()
+    
     func getListOfHistoryCrashesRequest() -> Void {
         
         let parameters: Parameters = [
-            "vehicle_id": id!
+            "vehicle_id": self.id!
         ]
         
         Alamofire.request(GET_LIST_OF_HISTORY_CRASHES_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
@@ -43,7 +45,7 @@ class Vehicle {
     func getListOfActualCrashesRequest() -> Void {
         
         let parameters: Parameters = [
-            "vehicle_id": id!
+            "vehicle_id": self.id!
         ]
         
         Alamofire.request(GET_LIST_OF_ACTUAL_CRASHES_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
