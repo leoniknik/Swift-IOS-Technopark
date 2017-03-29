@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class Offer {
+    
+    var id: Int?
+    var price: Int = 0
+    var message: String = ""
+
+}
