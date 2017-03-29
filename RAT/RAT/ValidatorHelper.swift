@@ -34,5 +34,8 @@ class ValidatorHelper: NSObject {
         
     }
     
+    class func isPasswordEquel(password: String, repeatPassword: String) -> Bool{
+        return password == repeatPassword
+    }
     
 }

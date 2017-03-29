@@ -28,9 +28,25 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var facebookLogInButton: UIButton!
     
+    @IBAction func logIn(_ sender: Any) {
+        // TODO: проверить вводимые поля
+        Person.instance.email = emailTextField.text!
+        Person.instance.password = passwordTextField.text!
+        Person.instance.createLogInRequest()
+        // если зарегались
+        self.performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: nil)
+    }
+    
+    @IBAction func vkLogIn(_ sender: Any) {
+        
+    }
+    @IBAction func facebookLogIn(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 }
 
