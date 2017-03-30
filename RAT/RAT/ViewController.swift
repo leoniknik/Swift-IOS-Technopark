@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         // TODO: проверить вводимые поля
         Person.instance.email = emailTextField.text!
         Person.instance.password = passwordTextField.text!
-        Person.instance.createLogInRequest()
+        Person.instance.logInRequest()
         // если зарегались
         self.performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: nil)
     }
@@ -47,6 +47,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromAuthorizationToListOfVehiclesSegue"{
+            Person.instance.getListOfVehiclesRequest()
+        }
     }
 }
 

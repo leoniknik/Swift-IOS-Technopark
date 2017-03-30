@@ -24,7 +24,7 @@ class RegistrationViewController: UIViewController {
         Person.instance.firstname = firstnameTextField.text!
         Person.instance.lastname = lastnameTextField.text!
         Person.instance.phone = phoneTextField.text!
-        Person.instance.createSignUpRequest()
+        Person.instance.signUpRequest()
         // TODO: проверить зарегались мы или нет, если да то сделать переход на listofVehicles
         self.performSegue(withIdentifier: "fromRegistrationToListOfVehiclesSegue", sender: nil)
     }

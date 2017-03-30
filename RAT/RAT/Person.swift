@@ -35,12 +35,21 @@ final class Person {
 
     func signUpRequest() -> Void {
 
+        /*
         let parameters: Parameters = [
             "email": self.email,
             "password": self.password,
             "firstname": self.firstname,
             "lastname": self.lastname,
             "phone": self.phone
+        ]
+        */
+        let parameters: Parameters = [
+            "email": "leoniknik@mail.ru",
+            "password": "1234",
+            "firstname": "Kirill",
+            "lastname": "Volodin",
+            "phone": "89262805706"
         ]
 
         Alamofire.request(SIGNUP_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
@@ -55,17 +64,25 @@ final class Person {
     }
 
     func logInRequest() -> Void {
-
+/*
         let parameters: Parameters = [
                 "email": self.email,
                 "password": self.password
         ]
-
+*/
+        let parameters: Parameters = [
+            "email": "leoniknik@mail.ru",
+            "password": "1234"
+        ]
+        
         Alamofire.request(LOGIN_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
+                if let id = json["user_id"].int {
+                    self.id = id
+                }
             case .failure(let error):
                 print(error)
             }
@@ -77,8 +94,8 @@ final class Person {
         let parameters: Parameters = [
             "user_id": self.id!
         ]
-        
-        Alamofire.request(GET_LIST_OF_VEHICLES_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
+
+        Alamofire.request(GET_LIST_OF_VEHICLES_URL, method: .get, parameters: parameters ).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -111,7 +128,7 @@ final class Person {
         }
     }
 
-    
+ /*
     func addVehiclesRequest() -> Void {
         
         let parameters: Parameters = [
@@ -133,5 +150,7 @@ final class Person {
             }
         }
     }
-
+*/
+    
+    
 }
