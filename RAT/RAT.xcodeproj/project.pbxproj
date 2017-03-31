@@ -23,6 +23,8 @@
 		EDB05D2D1E8BC37B00FFE86E /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB05D2C1E8BC37B00FFE86E /* Vehicle.swift */; };
 		EDB05D2F1E8BD8CE00FFE86E /* Crash.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB05D2E1E8BD8CE00FFE86E /* Crash.swift */; };
 		EDB05D311E8BD8F200FFE86E /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB05D301E8BD8F200FFE86E /* Offer.swift */; };
+		EDB57C781E8ED37C001DE647 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDB57C761E8ED37C001DE647 /* Model.xcdatamodeld */; };
+		EDB57C7A1E8EE5ED001DE647 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB57C791E8EE5ED001DE647 /* CoreDataHelper.swift */; };
 		EDCC4B781E8D26D900D94FB7 /* ListOfVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC4B771E8D26D900D94FB7 /* ListOfVehiclesViewController.swift */; };
 		EDCC4B7C1E8D6FCF00D94FB7 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC4B7B1E8D6FCF00D94FB7 /* VehicleCell.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		EDB05D2C1E8BC37B00FFE86E /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		EDB05D2E1E8BD8CE00FFE86E /* Crash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crash.swift; sourceTree = "<group>"; };
 		EDB05D301E8BD8F200FFE86E /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		EDB57C771E8ED37C001DE647 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EDB57C791E8EE5ED001DE647 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		EDCC4B771E8D26D900D94FB7 /* ListOfVehiclesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfVehiclesViewController.swift; sourceTree = "<group>"; };
 		EDCC4B7B1E8D6FCF00D94FB7 /* VehicleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +140,7 @@
 				DE4B50431E818FF50031A2E8 /* PersonalData.storyboard */,
 				EDAFF5F81E7B3C630069F42E /* Assets.xcassets */,
 				EDAFF5FD1E7B3C630069F42E /* Info.plist */,
+				EDB57C761E8ED37C001DE647 /* Model.xcdatamodeld */,
 			);
 			path = RAT;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */,
+				EDB57C791E8EE5ED001DE647 /* CoreDataHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 			files = (
 				EDCC4B7C1E8D6FCF00D94FB7 /* VehicleCell.swift in Sources */,
 				EDB05D2D1E8BC37B00FFE86E /* Vehicle.swift in Sources */,
+				EDB57C7A1E8EE5ED001DE647 /* CoreDataHelper.swift in Sources */,
+				EDB57C781E8ED37C001DE647 /* Model.xcdatamodeld in Sources */,
 				EDA929DE1E8C7FAB000D67BA /* Service.swift in Sources */,
 				EDCC4B781E8D26D900D94FB7 /* ListOfVehiclesViewController.swift in Sources */,
 				ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */,
@@ -449,6 +457,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EDB57C761E8ED37C001DE647 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EDB57C771E8ED37C001DE647 /* Model.xcdatamodel */,
+			);
+			currentVersion = EDB57C771E8ED37C001DE647 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EDAFF5E61E7B3C620069F42E /* Project object */;
 }

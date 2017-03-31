@@ -15,10 +15,10 @@ class Crash {
     let GET_LIST_OF_OFFERS = "http://192.168.1.51:8000/api/get_list_of_offers"
     
     var id: Int?
-    var code: Int?
+    var code: String = ""
     var fullDescription: String = ""
     var shortDescription: String = ""
-    var date: Data?
+    var date: String = ""
     
     var arrayOffers = Array<Offer>()
     
