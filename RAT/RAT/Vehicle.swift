@@ -21,7 +21,27 @@ class Vehicle {
     var number: String = ""
     var brand: String = ""
     var model: String = ""
-    var year: Date?
+    var year: String = ""
+    
+    init(id:Int,VIN:String,number:String,brand:String,model:String,year:String) {
+        
+        self.id = id
+        self.VIN = VIN
+        self.number = number
+        self.brand = brand
+        self.model = model
+        self.year = year
+    
+    }
+    
+    init(vehicle:JSON) {
+        self.id = vehicle["id"].int
+        self.VIN = vehicle["VIN"].string!
+        self.number = vehicle["number"].string!
+        self.brand = vehicle["brand"].string!
+        self.model = vehicle["model"].string!
+        self.year = vehicle["year"].string!
+    }
     
     var arrayCrashes = Array<Crash>()
     
@@ -69,7 +89,7 @@ class Vehicle {
             "number": self.number,
             "brand": self.brand,
             "model": self.model,
-            "year": self.year!,
+            "year": self.year,
         ]
         
         Alamofire.request(EDIT_VEHICLE_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
