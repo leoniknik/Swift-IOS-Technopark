@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Just
 
 final class Person {
 
@@ -74,17 +75,12 @@ final class Person {
             "email": "leoniknik@mail.ru",
             "password": "1234"
         ]
-        
-        Alamofire.request(LOGIN_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                if let id = json["user_id"].int {
-                    self.id = id
-                }
-            case .failure(let error):
-                print(error)
+    
+        let request = Just.post(LOGIN_URL, data:parameters)
+    
+        if request.ok {
+            if let json = request.json as? [String:AnyObject]{
+                self.id = json["user_id"] as! Int?
             }
         }
     }
@@ -98,8 +94,11 @@ final class Person {
         Alamofire.request(GET_LIST_OF_VEHICLES_URL, method: .get, parameters: parameters ).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
+                let json = JSON(value)["data"].array!
+                self.arrayVehicles.removeAll()
+                for vehicle in json {
+                    self.arrayVehicles.append(Vehicle(vehicle: vehicle))
+                }
             case .failure(let error):
                 print(error)
             }

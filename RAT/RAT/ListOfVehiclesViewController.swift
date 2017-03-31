@@ -22,11 +22,15 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return Person.instance.arrayVehicles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listOfVehiclesTable.dequeueReusableCell(withIdentifier: "VehicleCell") as! VehicleCell
+        let index = indexPath.item
+        cell.number.text = Person.instance.arrayVehicles[index].number
+        cell.brand.text = Person.instance.arrayVehicles[index].brand
+        cell.model.text = Person.instance.arrayVehicles[index].model
         return cell
     }
     
@@ -34,9 +38,4 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
         self.performSegue(withIdentifier: "fromListOfVehicleToListOfCrashesSegue", sender: nil) // transition
     }
  
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromListOfVehicleToListOfCrashesSegue" {
-            
-        }
-    }
 }
