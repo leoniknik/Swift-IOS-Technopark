@@ -10,7 +10,8 @@ import Foundation
 
 class Offer {
     
-
+    let SERVER_IP="http://192.168.43.120:8000"
+    
     var id: Int?
     var price: Int = 0
     var message: String = ""

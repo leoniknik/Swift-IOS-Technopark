@@ -12,9 +12,11 @@ import SwiftyJSON
 
 class Vehicle {
     
-    let EDIT_VEHICLE_URL = "http://192.168.1.51:8000/api/edit_vehicle"
-    let GET_LIST_OF_HISTORY_CRASHES_URL = "http://192.168.1.51:8000/api/get_list_of_history_crashes"
-    let GET_LIST_OF_ACTUAL_CRASHES_URL = "http://192.168.1.51:8000/api/get_list_of_actual_crashes"
+    let SERVER_IP="http://192.168.43.120:8000"
+    
+    let EDIT_VEHICLE_URL: String
+    let GET_LIST_OF_HISTORY_CRASHES_URL: String
+    let GET_LIST_OF_ACTUAL_CRASHES_URL: String
     
     var id: Int?
     var VIN: String = ""
@@ -23,6 +25,7 @@ class Vehicle {
     var model: String = ""
     var year: String = ""
     
+    /*
     init(id:Int,VIN:String,number:String,brand:String,model:String,year:String) {
         
         self.id = id
@@ -33,6 +36,7 @@ class Vehicle {
         self.year = year
     
     }
+ */
     
     init(vehicle:JSON) {
         self.id = vehicle["id"].int
@@ -41,6 +45,10 @@ class Vehicle {
         self.brand = vehicle["brand"].string!
         self.model = vehicle["model"].string!
         self.year = vehicle["year"].string!
+        
+        EDIT_VEHICLE_URL = "\(SERVER_IP)"+"/api/edit_vehicle"
+        GET_LIST_OF_HISTORY_CRASHES_URL = "\(SERVER_IP)"+"/api/get_list_of_history_crashes"
+        GET_LIST_OF_ACTUAL_CRASHES_URL = "\(SERVER_IP)"+"/api/get_list_of_actual_crashes"
     }
     
     var arrayCrashes = Array<Crash>()
