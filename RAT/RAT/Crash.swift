@@ -12,8 +12,9 @@ import SwiftyJSON
 
 class Crash {
     
-    let GET_LIST_OF_OFFERS = "http://192.168.1.51:8000/api/get_list_of_offers"
+    let SERVER_IP="http://192.168.43.120:8000"
     
+    let GET_LIST_OF_OFFERS: String
     var id: Int?
     var code: String = ""
     var fullDescription: String = ""
@@ -21,6 +22,10 @@ class Crash {
     var date: String = ""
     
     var arrayOffers = Array<Offer>()
+    
+    init(){
+        GET_LIST_OF_OFFERS = "\(SERVER_IP))"+"/api/get_list_of_offers"
+    }
     
     func getListOfOffersRequest() -> Void {
         
