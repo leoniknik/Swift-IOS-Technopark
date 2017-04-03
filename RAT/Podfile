@@ -6,6 +6,4 @@ target 'RAT' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'Just'
-  pod 'CoreStore'
 end

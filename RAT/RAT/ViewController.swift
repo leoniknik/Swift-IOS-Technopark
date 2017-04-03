@@ -30,11 +30,13 @@ class ViewController: UIViewController {
     
     @IBAction func logIn(_ sender: Any) {
         // TODO: проверить вводимые поля
+        /*
         Person.instance.email = emailTextField.text!
         Person.instance.password = passwordTextField.text!
         Person.instance.logInRequest()
         // если зарегались
         self.performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: nil)
+ */
     }
     
     @IBAction func vkLogIn(_ sender: Any) {
@@ -48,11 +50,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromAuthorizationToListOfVehiclesSegue"{
             Person.instance.getListOfVehiclesRequest()
         }
     }
+*/
 }
 

@@ -9,5 +9,5 @@
 import Foundation
 
 class Review {
-    let SERVER_IP="http://192.168.43.120:8000"
+    
 }

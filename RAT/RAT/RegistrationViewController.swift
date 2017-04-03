@@ -19,6 +19,7 @@ class RegistrationViewController: UIViewController {
     
     @IBAction func signUp(_ sender: Any) {
         // TODO: проверить вводимые поля
+        /*
         Person.instance.email = emailTextField.text!
         Person.instance.password = passwordTextField.text!
         Person.instance.firstname = firstnameTextField.text!
@@ -27,6 +28,7 @@ class RegistrationViewController: UIViewController {
         Person.instance.signUpRequest()
         // TODO: проверить зарегались мы или нет, если да то сделать переход на listofVehicles
         self.performSegue(withIdentifier: "fromRegistrationToListOfVehiclesSegue", sender: nil)
+ */
     }
     
 
