@@ -7,16 +7,10 @@
 //
 
 import Foundation
-import Alamofire
 import SwiftyJSON
 
 class Vehicle {
     
-    let SERVER_IP="http://192.168.43.120:8000"
-    
-    let EDIT_VEHICLE_URL: String
-    let GET_LIST_OF_HISTORY_CRASHES_URL: String
-    let GET_LIST_OF_ACTUAL_CRASHES_URL: String
     
     var id: Int?
     var VIN: String = ""
@@ -46,70 +40,10 @@ class Vehicle {
         self.model = vehicle["model"].string!
         self.year = vehicle["year"].string!
         
-        EDIT_VEHICLE_URL = "\(SERVER_IP)"+"/api/edit_vehicle"
-        GET_LIST_OF_HISTORY_CRASHES_URL = "\(SERVER_IP)"+"/api/get_list_of_history_crashes"
-        GET_LIST_OF_ACTUAL_CRASHES_URL = "\(SERVER_IP)"+"/api/get_list_of_actual_crashes"
     }
     
-    var arrayCrashes = Array<Crash>()
+    var arrayHistoryCrashes = Array<Crash>()
     
-    var arrayCrashs = Array<Crash>()
-    
-    func getListOfHistoryCrashesRequest() -> Void {
-        
-        let parameters: Parameters = [
-            "vehicle_id": self.id!
-        ]
-        
-        Alamofire.request(GET_LIST_OF_HISTORY_CRASHES_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func getListOfActualCrashesRequest() -> Void {
-        
-        let parameters: Parameters = [
-            "vehicle_id": self.id!
-        ]
-        
-        Alamofire.request(GET_LIST_OF_ACTUAL_CRASHES_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func editVehicleRequest() -> Void {
-        
-        let parameters: Parameters = [
-            "vehicle_id": self.id!,
-            "VIN": self.VIN,
-            "number": self.number,
-            "brand": self.brand,
-            "model": self.model,
-            "year": self.year,
-        ]
-        
-        Alamofire.request(EDIT_VEHICLE_URL, method: .post, parameters: parameters ).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
+    var arrayActualCrashes = Array<Crash>()
     
 }

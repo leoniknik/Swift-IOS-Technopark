@@ -9,16 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CoreStore.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Just.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-RAT.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +22,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>167F5C316AC4456B87F8D9E9B21C40A2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>31E57293263B3BCB073947F277B6859E</key>
+		<key>0637CC14AEDAD9C9263D67EEA3F6FB9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +32,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0652C1F97EE571A92AD2BBF1759A01D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D5D3BD952D57AD3D47FE6178401E5BEC</key>
+		<key>A13B983410853FD37F25101C278511DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

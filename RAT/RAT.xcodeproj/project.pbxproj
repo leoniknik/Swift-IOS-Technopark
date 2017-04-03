@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6324B96E9BE6024323E519BF /* Pods_RAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFE9E15CB447968DE188955 /* Pods_RAT.framework */; };
 		DE4B50451E818FF60031A2E8 /* PersonalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4B50431E818FF50031A2E8 /* PersonalData.storyboard */; };
+		E5CD462E9354206063F6EFA0 /* Pods_RAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D6C7D10F138F7C8A26840F /* Pods_RAT.framework */; };
 		ED7017C71E7D368F00955C99 /* ListOfCrashesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */; };
 		ED7017CA1E7D49FF00955C99 /* CrashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C91E7D49FF00955C99 /* CrashCell.swift */; };
 		ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */; };
@@ -23,16 +23,15 @@
 		EDB05D2D1E8BC37B00FFE86E /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB05D2C1E8BC37B00FFE86E /* Vehicle.swift */; };
 		EDB05D2F1E8BD8CE00FFE86E /* Crash.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB05D2E1E8BD8CE00FFE86E /* Crash.swift */; };
 		EDB05D311E8BD8F200FFE86E /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB05D301E8BD8F200FFE86E /* Offer.swift */; };
-		EDB57C781E8ED37C001DE647 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDB57C761E8ED37C001DE647 /* Model.xcdatamodeld */; };
-		EDB57C7A1E8EE5ED001DE647 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB57C791E8EE5ED001DE647 /* CoreDataHelper.swift */; };
+		EDBAEAC41E91AF73008BC298 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAEAC31E91AF73008BC298 /* APIHelper.swift */; };
 		EDCC4B781E8D26D900D94FB7 /* ListOfVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC4B771E8D26D900D94FB7 /* ListOfVehiclesViewController.swift */; };
 		EDCC4B7C1E8D6FCF00D94FB7 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC4B7B1E8D6FCF00D94FB7 /* VehicleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A6CE3FF18AFAAF4C87F2E023 /* Pods-RAT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.debug.xcconfig"; sourceTree = "<group>"; };
-		CBFE9E15CB447968DE188955 /* Pods_RAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3A4CDD1D814CBDF3F812D49 /* Pods-RAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.release.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.release.xcconfig"; sourceTree = "<group>"; };
+		70840CDFF038DE51486FDEAD /* Pods-RAT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.debug.xcconfig"; sourceTree = "<group>"; };
+		70D6C7D10F138F7C8A26840F /* Pods_RAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D277C9F1F9976F40C4D1CE /* Pods-RAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.release.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.release.xcconfig"; sourceTree = "<group>"; };
 		DE4B50441E818FF60031A2E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PersonalData.storyboard; sourceTree = "<group>"; };
 		ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfCrashesViewController.swift; sourceTree = "<group>"; };
 		ED7017C91E7D49FF00955C99 /* CrashCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashCell.swift; sourceTree = "<group>"; };
@@ -50,8 +49,7 @@
 		EDB05D2C1E8BC37B00FFE86E /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		EDB05D2E1E8BD8CE00FFE86E /* Crash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crash.swift; sourceTree = "<group>"; };
 		EDB05D301E8BD8F200FFE86E /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
-		EDB57C771E8ED37C001DE647 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		EDB57C791E8EE5ED001DE647 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		EDBAEAC31E91AF73008BC298 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		EDCC4B771E8D26D900D94FB7 /* ListOfVehiclesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfVehiclesViewController.swift; sourceTree = "<group>"; };
 		EDCC4B7B1E8D6FCF00D94FB7 /* VehicleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,26 +59,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6324B96E9BE6024323E519BF /* Pods_RAT.framework in Frameworks */,
+				E5CD462E9354206063F6EFA0 /* Pods_RAT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62705922F72399EDD9E3E400 /* Pods */ = {
+		17DB49CF29EEA4E72EFC3B52 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A6CE3FF18AFAAF4C87F2E023 /* Pods-RAT.debug.xcconfig */,
-				D3A4CDD1D814CBDF3F812D49 /* Pods-RAT.release.xcconfig */,
+				70840CDFF038DE51486FDEAD /* Pods-RAT.debug.xcconfig */,
+				A8D277C9F1F9976F40C4D1CE /* Pods-RAT.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A98E76E9E67EF443C0FBD63C /* Frameworks */ = {
+		B80FA915DC5576EDEFDD0760 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CBFE9E15CB447968DE188955 /* Pods_RAT.framework */,
+				70D6C7D10F138F7C8A26840F /* Pods_RAT.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,8 +112,8 @@
 			children = (
 				EDAFF5F01E7B3C630069F42E /* RAT */,
 				EDAFF5EF1E7B3C630069F42E /* Products */,
-				62705922F72399EDD9E3E400 /* Pods */,
-				A98E76E9E67EF443C0FBD63C /* Frameworks */,
+				17DB49CF29EEA4E72EFC3B52 /* Pods */,
+				B80FA915DC5576EDEFDD0760 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,7 +138,6 @@
 				DE4B50431E818FF50031A2E8 /* PersonalData.storyboard */,
 				EDAFF5F81E7B3C630069F42E /* Assets.xcassets */,
 				EDAFF5FD1E7B3C630069F42E /* Info.plist */,
-				EDB57C761E8ED37C001DE647 /* Model.xcdatamodeld */,
 			);
 			path = RAT;
 			sourceTree = "<group>";
@@ -149,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */,
-				EDB57C791E8EE5ED001DE647 /* CoreDataHelper.swift */,
+				EDBAEAC31E91AF73008BC298 /* APIHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -161,12 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDAFF6001E7B3C630069F42E /* Build configuration list for PBXNativeTarget "RAT" */;
 			buildPhases = (
-				3E1650B6CABDC01910AEDDB6 /* [CP] Check Pods Manifest.lock */,
+				62E801A2633A1820BECDECE0 /* [CP] Check Pods Manifest.lock */,
 				EDAFF5EA1E7B3C620069F42E /* Sources */,
 				EDAFF5EB1E7B3C620069F42E /* Frameworks */,
 				EDAFF5EC1E7B3C620069F42E /* Resources */,
-				1569D8775C61AB50176694F1 /* [CP] Embed Pods Frameworks */,
-				A04C504F7C32CEBFF9A7DBD1 /* [CP] Copy Pods Resources */,
+				E8C7418F864420C0A0AB39FE /* [CP] Embed Pods Frameworks */,
+				45E655298BEF3A254F219024 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,37 +222,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1569D8775C61AB50176694F1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RAT/Pods-RAT-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3E1650B6CABDC01910AEDDB6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A04C504F7C32CEBFF9A7DBD1 /* [CP] Copy Pods Resources */ = {
+		45E655298BEF3A254F219024 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,6 +237,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RAT/Pods-RAT-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		62E801A2633A1820BECDECE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8C7418F864420C0A0AB39FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RAT/Pods-RAT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -279,9 +276,8 @@
 			files = (
 				EDCC4B7C1E8D6FCF00D94FB7 /* VehicleCell.swift in Sources */,
 				EDB05D2D1E8BC37B00FFE86E /* Vehicle.swift in Sources */,
-				EDB57C7A1E8EE5ED001DE647 /* CoreDataHelper.swift in Sources */,
-				EDB57C781E8ED37C001DE647 /* Model.xcdatamodeld in Sources */,
 				EDA929DE1E8C7FAB000D67BA /* Service.swift in Sources */,
+				EDBAEAC41E91AF73008BC298 /* APIHelper.swift in Sources */,
 				EDCC4B781E8D26D900D94FB7 /* ListOfVehiclesViewController.swift in Sources */,
 				ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */,
 				EDAFF5F41E7B3C630069F42E /* ViewController.swift in Sources */,
@@ -411,7 +407,7 @@
 		};
 		EDAFF6011E7B3C630069F42E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6CE3FF18AFAAF4C87F2E023 /* Pods-RAT.debug.xcconfig */;
+			baseConfigurationReference = 70840CDFF038DE51486FDEAD /* Pods-RAT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RAT/Info.plist;
@@ -424,7 +420,7 @@
 		};
 		EDAFF6021E7B3C630069F42E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3A4CDD1D814CBDF3F812D49 /* Pods-RAT.release.xcconfig */;
+			baseConfigurationReference = A8D277C9F1F9976F40C4D1CE /* Pods-RAT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RAT/Info.plist;
@@ -457,19 +453,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		EDB57C761E8ED37C001DE647 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				EDB57C771E8ED37C001DE647 /* Model.xcdatamodel */,
-			);
-			currentVersion = EDB57C771E8ED37C001DE647 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = EDAFF5E61E7B3C620069F42E /* Project object */;
 }
