@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Review {
+class Review: Object {
     
 }

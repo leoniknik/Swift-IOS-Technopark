@@ -22,15 +22,16 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Person.instance.arrayVehicles.count
+        //return Person.instance.arrayVehicles.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listOfVehiclesTable.dequeueReusableCell(withIdentifier: "VehicleCell") as! VehicleCell
         let index = indexPath.item
-        cell.number.text = Person.instance.arrayVehicles[index].number
-        cell.brand.text = Person.instance.arrayVehicles[index].brand
-        cell.model.text = Person.instance.arrayVehicles[index].model
+        //cell.number.text = Person.instance.arrayVehicles[index].number
+        //cell.brand.text = Person.instance.arrayVehicles[index].brand
+        //cell.model.text = Person.instance.arrayVehicles[index].model
         return cell
     }
     

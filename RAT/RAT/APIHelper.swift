@@ -15,36 +15,41 @@ class APIHelper {
     
     static let SERVER_IP="http://192.168.1.33:8000"
     
-    static let SIGNUP_URL = "\(SERVER_IP)"+"/api/signup"
-    static let LOGIN_URL = "\(SERVER_IP)"+"/api/signin"
-    static let GET_LIST_OF_VEHICLES_URL = "\(SERVER_IP)"+"/api/get_list_of_vehicles"
-    static let EDIT_USER_URL = "\(SERVER_IP)"+"/api/edit_user"
-    static let ADD_VEHICLE_URL = "\(SERVER_IP)"+"/api/signin"
-    static let EDIT_VEHICLE_URL = "\(SERVER_IP)"+"/api/edit_vehicle"
-    static let GET_LIST_OF_HISTORY_CRASHES_URL = "\(SERVER_IP)"+"/api/get_list_of_history_crashes"
-    static let GET_LIST_OF_ACTUAL_CRASHES_URL = "\(SERVER_IP)"+"/api/get_list_of_actual_crashes"
-    static let GET_LIST_OF_OFFERS = "\(SERVER_IP))"+"/api/get_list_of_offers"
+    static let SIGNUP_URL = "\(SERVER_IP)/api/signup"
+    static let LOGIN_URL = "\(SERVER_IP)/api/signin"
+    static let GET_LIST_OF_VEHICLES_URL = "\(SERVER_IP)/api/get_list_of_vehicles"
+    static let EDIT_USER_URL = "\(SERVER_IP)/api/edit_user"
+    static let ADD_VEHICLE_URL = "\(SERVER_IP)/api/signin"
+    static let EDIT_VEHICLE_URL = "\(SERVER_IP)/api/edit_vehicle"
+    static let GET_LIST_OF_HISTORY_CRASHES_URL = "\(SERVER_IP)/api/get_list_of_history_crashes"
+    static let GET_LIST_OF_ACTUAL_CRASHES_URL = "\(SERVER_IP)/api/get_list_of_actual_crashes"
+    static let GET_LIST_OF_OFFERS = "\(SERVER_IP)/api/get_list_of_offers"
     
     
-    class func signUpRequest() -> Void {
+    class func signUpRequest(person: Person) -> Void {
         
-         let parameters: Parameters = [
-            "email": Person.instance.email,
-            "password": Person.instance.password,
-            "firstname": Person.instance.firstname,
-            "lastname": Person.instance.lastname,
-            "phone": Person.instance.phone
-         ]
+        let parameters: Parameters = [
+            "email": person.email,
+            "password": person.password,
+            "firstname": person.firstname,
+            "lastname": person.lastname,
+            "phone": person.phone
+        ]
         
-        request(URL: SIGNUP_URL, method: .post, parameters: parameters, onSuccess: defaultOnSuccess, onError: defaultOnError)
+        request(URL: SIGNUP_URL, method: .post, parameters: parameters, onSuccess: signUpOnSuccess, onError: defaultOnError)
         
     }
     
-    class func logInRequest() -> Void {
+    class func signUpOnSuccess(json: JSON) -> Void {
+        let person = DataBaseHelper.getPerson()
+        APIHelper.logInRequest(person: person)
+    }
+    
+    class func logInRequest(person: Person) -> Void {
 
         let parameters: Parameters = [
-            "email": Person.instance.email,
-            "password": Person.instance.password
+            "email": person.email,
+            "password": person.password
         ]
         
         request(URL: LOGIN_URL, method: .post, parameters: parameters, onSuccess: logInOnSuccess, onError: defaultOnError)
@@ -52,14 +57,13 @@ class APIHelper {
     }
     
     class func logInOnSuccess(json: JSON) -> Void {
-        
-        Person.instance.firstname = json["firstname"].string!
-        Person.instance.lastname = json["lastname"].string!
-        Person.instance.phone = json["phone"].string!
-        Person.instance.id = json["user_id"].int
-        
+        let person = DataBaseHelper.getPerson()
+        let id = json["user_id"].int!
+        DataBaseHelper.setPersonID(person: person, id: id)
+        print(person.id)
     }
     
+    /*
     class func getListOfVehiclesRequest() -> Void {
         
         let parameters: Parameters = [
@@ -144,13 +148,13 @@ class APIHelper {
     class func getListOfOffersRequest(crash: Crash) -> Void {
         
         let parameters: Parameters = [
-            "crash_id": crash.id!
+            "crash_id": crash.id
         ]
         
         request(URL: GET_LIST_OF_OFFERS, method: .get, parameters: parameters, onSuccess: defaultOnSuccess, onError: defaultOnError)
     }
     
-    
+    */
     class func defaultOnSuccess(json: JSON) -> Void{
         print(json)
     }

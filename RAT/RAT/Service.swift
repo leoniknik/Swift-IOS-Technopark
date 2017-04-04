@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Service {
-
+class Service: Object {
     
 }

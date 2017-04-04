@@ -28,15 +28,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var facebookLogInButton: UIButton!
     
+    let person = Person()
+    
     @IBAction func logIn(_ sender: Any) {
         // TODO: проверить вводимые поля
-        /*
-        Person.instance.email = emailTextField.text!
-        Person.instance.password = passwordTextField.text!
-        Person.instance.logInRequest()
+        
+        //Person.instance.email = emailTextField.text!
+        //Person.instance.password = passwordTextField.text!
+        //Person.instance.logInRequest()
         // если зарегались
-        self.performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: nil)
- */
+        //self.performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: nil)
     }
     
     @IBAction func vkLogIn(_ sender: Any) {
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

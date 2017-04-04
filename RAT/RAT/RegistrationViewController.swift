@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RegistrationViewController: UIViewController {
 
@@ -18,23 +19,30 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     
     @IBAction func signUp(_ sender: Any) {
-        // TODO: проверить вводимые поля
+        let person = Person()
         /*
-        Person.instance.email = emailTextField.text!
-        Person.instance.password = passwordTextField.text!
-        Person.instance.firstname = firstnameTextField.text!
-        Person.instance.lastname = lastnameTextField.text!
-        Person.instance.phone = phoneTextField.text!
-        Person.instance.signUpRequest()
-        // TODO: проверить зарегались мы или нет, если да то сделать переход на listofVehicles
-        self.performSegue(withIdentifier: "fromRegistrationToListOfVehiclesSegue", sender: nil)
- */
+        person.email = emailTextField.text!
+        person.password = passwordTextField.text!
+        person.firstname = firstnameTextField.text!
+        person.lastname = lastnameTextField.text!
+        person.phone = phoneTextField.text!
+        */
+        
+        
+        person.email = "user@mail.ru"
+        person.password = "qwerty"
+        person.firstname = "user"
+        person.lastname = "userovich"
+        person.phone = "88005553535"
+        
+        APIHelper.signUpRequest(person: person)
+        DataBaseHelper.save(object: person)
     }
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 }
