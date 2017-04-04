@@ -6,4 +6,5 @@ target 'RAT' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'RealmSwift', '~> 2.5.0'
 end

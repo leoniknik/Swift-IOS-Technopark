@@ -7,22 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-final class Person {
+class Person: Object {
     
-    var id: Int?
-    var email : String = ""
-    var password : String = ""
-    var firstname : String = ""
-    var lastname : String = ""
-    var phone : String = ""
-    
-    var arrayVehicles = Array<Vehicle>()
-    
-    private init(){
-
-    }
-
-    static let instance: Person = Person()
+    dynamic var id = 0
+    dynamic var email : String = ""
+    dynamic var password : String = ""
+    dynamic var firstname : String = ""
+    dynamic var lastname : String = ""
+    dynamic var phone : String = ""
+    let vehicles = List<Vehicle>()
     
 }

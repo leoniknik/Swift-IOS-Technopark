@@ -8,15 +8,15 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
-class Crash {
+class Crash: Object {
     
-    var id: Int?
-    var code: String = ""
-    var fullDescription: String = ""
-    var shortDescription: String = ""
-    var date: String = ""
-    
-    var arrayOffers = Array<Offer>()
+    dynamic var id: Int = 0
+    dynamic var code: String = ""
+    dynamic var fullDescription: String = ""
+    dynamic var shortDescription: String = ""
+    dynamic var date: String = ""
+    let arrayOffers = List<Offer>()
     
 }

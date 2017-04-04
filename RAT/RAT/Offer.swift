@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Offer {
+class Offer: Object {
     
-    var id: Int?
-    var price: Int = 0
-    var message: String = ""
+    dynamic var id: Int = 0
+    dynamic var price: Int = 0
+    dynamic var message: String = ""
 
 }

@@ -26,6 +26,7 @@
 		EDBAEAC41E91AF73008BC298 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAEAC31E91AF73008BC298 /* APIHelper.swift */; };
 		EDCC4B781E8D26D900D94FB7 /* ListOfVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC4B771E8D26D900D94FB7 /* ListOfVehiclesViewController.swift */; };
 		EDCC4B7C1E8D6FCF00D94FB7 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC4B7B1E8D6FCF00D94FB7 /* VehicleCell.swift */; };
+		EDD8A79C1E93DCE800CC57A1 /* DataBaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD8A79B1E93DCE800CC57A1 /* DataBaseHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		EDBAEAC31E91AF73008BC298 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		EDCC4B771E8D26D900D94FB7 /* ListOfVehiclesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfVehiclesViewController.swift; sourceTree = "<group>"; };
 		EDCC4B7B1E8D6FCF00D94FB7 /* VehicleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
+		EDD8A79B1E93DCE800CC57A1 /* DataBaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */,
 				EDBAEAC31E91AF73008BC298 /* APIHelper.swift */,
+				EDD8A79B1E93DCE800CC57A1 /* DataBaseHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				EDB05D2D1E8BC37B00FFE86E /* Vehicle.swift in Sources */,
 				EDA929DE1E8C7FAB000D67BA /* Service.swift in Sources */,
 				EDBAEAC41E91AF73008BC298 /* APIHelper.swift in Sources */,
+				EDD8A79C1E93DCE800CC57A1 /* DataBaseHelper.swift in Sources */,
 				EDCC4B781E8D26D900D94FB7 /* ListOfVehiclesViewController.swift in Sources */,
 				ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */,
 				EDAFF5F41E7B3C630069F42E /* ViewController.swift in Sources */,
