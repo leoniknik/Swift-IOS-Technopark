@@ -25,6 +25,8 @@ class APIHelper {
     static let GET_LIST_OF_ACTUAL_CRASHES_URL = "\(SERVER_IP)/api/get_list_of_actual_crashes"
     static let GET_LIST_OF_OFFERS = "\(SERVER_IP)/api/get_list_of_offers"
     
+    static let OK = 0
+    static let ERROR = 1
     
     class func signUpRequest(person: Person) -> Void {
         
@@ -41,8 +43,13 @@ class APIHelper {
     }
     
     class func signUpOnSuccess(json: JSON) -> Void {
-        let person = DataBaseHelper.getPerson()
-        APIHelper.logInRequest(person: person)
+        print(json)
+        let code = json["code"].int!
+        if code == OK {
+            //let data = json["data"].dictionaryObject
+            //NotificationCenter.default.post(name: .signUpCallback, object: nil, userInfo: data)
+            NotificationCenter.default.post(name: .signUpCallback, object: nil)
+        }
     }
     
     class func logInRequest(person: Person) -> Void {

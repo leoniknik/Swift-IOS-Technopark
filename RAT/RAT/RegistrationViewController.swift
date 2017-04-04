@@ -18,8 +18,10 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    var person = Person()
+    
     @IBAction func signUp(_ sender: Any) {
-        let person = Person()
+       
         /*
         person.email = emailTextField.text!
         person.password = passwordTextField.text!
@@ -27,8 +29,7 @@ class RegistrationViewController: UIViewController {
         person.lastname = lastnameTextField.text!
         person.phone = phoneTextField.text!
         */
-        
-        
+
         person.email = "user@mail.ru"
         person.password = "qwerty"
         person.firstname = "user"
@@ -36,13 +37,16 @@ class RegistrationViewController: UIViewController {
         person.phone = "88005553535"
         
         APIHelper.signUpRequest(person: person)
-        DataBaseHelper.save(object: person)
     }
     
-
+    func signUpCallback(_ notification: NSNotification){
+        //let data = notification.userInfo as! [String : Any]
+        DataBaseHelper.save(object: person)
+        APIHelper.logInRequest(person: person)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(signUpCallback), name: .signUpCallback, object: nil)
     }
 }

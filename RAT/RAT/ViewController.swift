@@ -32,12 +32,16 @@ class ViewController: UIViewController {
     
     @IBAction func logIn(_ sender: Any) {
         // TODO: проверить вводимые поля
+        /*
+        person.email = emailTextField.text!
+        person.password = passwordTextField.text!
+         */
         
-        //Person.instance.email = emailTextField.text!
-        //Person.instance.password = passwordTextField.text!
-        //Person.instance.logInRequest()
-        // если зарегались
-        //self.performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: nil)
+        person.email = "leoniknik@mail.ru"
+        person.password = "1234"
+        
+        APIHelper.logInRequest(person: person)
+        
     }
     
     @IBAction func vkLogIn(_ sender: Any) {
@@ -47,6 +51,11 @@ class ViewController: UIViewController {
         
     }
     
+    /*
+    @IBAction func goToListOfVehicles(_ sender: Any){
+        performSegue(withIdentifier: "fromRegistrationToListOfVehiclesSegue", sender: nil)
+    }
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
