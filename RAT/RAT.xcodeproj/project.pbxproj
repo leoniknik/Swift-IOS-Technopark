@@ -14,6 +14,7 @@
 		ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */; };
 		ED97321D1E8AFCD200FCED3F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97321C1E8AFCD200FCED3F /* Person.swift */; };
 		ED99E5A41E8550260039EBF7 /* ValidatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */; };
+		EDA390F61E94375C002B0C65 /* NotificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA390F51E94375C002B0C65 /* NotificationRouter.swift */; };
 		EDA929DC1E8C7F97000D67BA /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA929DB1E8C7F97000D67BA /* Review.swift */; };
 		EDA929DE1E8C7FAB000D67BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA929DD1E8C7FAB000D67BA /* Service.swift */; };
 		EDAFF5F21E7B3C630069F42E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFF5F11E7B3C630069F42E /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		ED97321C1E8AFCD200FCED3F /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorHelper.swift; sourceTree = "<group>"; };
+		EDA390F51E94375C002B0C65 /* NotificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRouter.swift; sourceTree = "<group>"; };
 		EDA929DB1E8C7F97000D67BA /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		EDA929DD1E8C7FAB000D67BA /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		EDAFF5EE1E7B3C630069F42E /* RAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */,
 				EDBAEAC31E91AF73008BC298 /* APIHelper.swift */,
 				EDD8A79B1E93DCE800CC57A1 /* DataBaseHelper.swift */,
+				EDA390F51E94375C002B0C65 /* NotificationRouter.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA390F61E94375C002B0C65 /* NotificationRouter.swift in Sources */,
 				EDCC4B7C1E8D6FCF00D94FB7 /* VehicleCell.swift in Sources */,
 				EDB05D2D1E8BC37B00FFE86E /* Vehicle.swift in Sources */,
 				EDA929DE1E8C7FAB000D67BA /* Service.swift in Sources */,

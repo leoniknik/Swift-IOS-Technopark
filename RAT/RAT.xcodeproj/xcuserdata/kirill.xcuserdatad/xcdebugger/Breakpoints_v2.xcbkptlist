@@ -137,11 +137,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RAT/RegistrationViewController.swift"
-            timestampString = "513019132.617398"
+            timestampString = "513036838.614177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "signUp(_:)"
             landmarkType = "7">
          </BreakpointContent>
