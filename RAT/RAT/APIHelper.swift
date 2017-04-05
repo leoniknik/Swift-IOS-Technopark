@@ -13,7 +13,7 @@ import SwiftyJSON
 class APIHelper {
     
     
-    static let SERVER_IP="http://192.168.1.33:8000"
+    static let SERVER_IP="http://192.168.1.39:8000"
     
     static let SIGNUP_URL = "\(SERVER_IP)/api/signup"
     static let LOGIN_URL = "\(SERVER_IP)/api/signin"
@@ -65,13 +65,15 @@ class APIHelper {
         print(json)
         let code = json["code"].int!
         if code == OK {
-            let data = json["data"].dictionary
+            let data = json["data"].dictionaryObject
             NotificationCenter.default.post(name: .logInCallback, object: nil, userInfo: data)
         }
     }
     
     
-    class func getListOfVehiclesRequest(person: Person) -> Void {
+    class func getListOfVehiclesRequest() -> Void {
+        
+        let person = DataBaseHelper.getPerson()
         
         let parameters: Parameters = [
             "user_id": person.id
@@ -82,10 +84,9 @@ class APIHelper {
     
     class func getListOfVehiclesOnSuccess(json: JSON) -> Void{
 
-        print(json)
         let code = json["code"].int!
         if code == OK {
-            let data = json.dictionary
+            let data = json.dictionaryValue
             NotificationCenter.default.post(name: .getVehiclesCallback, object: nil, userInfo: data)
         }
         

@@ -19,6 +19,7 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
         listOfVehiclesTable.delegate = self
         // listOfCrashesTable.separatorStyle = .none // delete all separators
         listOfVehiclesTable.tableFooterView = UIView() // delete excess separators
+        NotificationCenter.default.addObserver(self, selector: #selector(getVehiclesCallback(_:)), name: .getVehiclesCallback, object: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,4 +40,10 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
         self.performSegue(withIdentifier: "fromListOfVehicleToListOfCrashesSegue", sender: nil) // transition
     }
  
+    func getVehiclesCallback(_ notification: NSNotification){
+        
+        let data = notification.userInfo as! [String : Any]
+        let vehicles = data["data"]
+        print(vehicles!)
+    }
 }

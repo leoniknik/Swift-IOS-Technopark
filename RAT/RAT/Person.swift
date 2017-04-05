@@ -17,6 +17,11 @@ class Person: Object {
     dynamic var firstname : String = ""
     dynamic var lastname : String = ""
     dynamic var phone : String = ""
+    dynamic var actual: Bool = false
     let vehicles = List<Vehicle>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
 }
