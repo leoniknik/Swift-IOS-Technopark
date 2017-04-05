@@ -46,8 +46,6 @@ class APIHelper {
         print(json)
         let code = json["code"].int!
         if code == OK {
-            //let data = json["data"].dictionaryObject
-            //NotificationCenter.default.post(name: .signUpCallback, object: nil, userInfo: data)
             NotificationCenter.default.post(name: .signUpCallback, object: nil)
         }
     }
@@ -64,17 +62,19 @@ class APIHelper {
     }
     
     class func logInOnSuccess(json: JSON) -> Void {
-        let person = DataBaseHelper.getPerson()
-        let id = json["user_id"].int!
-        DataBaseHelper.setPersonID(person: person, id: id)
-        print(person.id)
+        print(json)
+        let code = json["code"].int!
+        if code == OK {
+            let data = json["data"].dictionary
+            NotificationCenter.default.post(name: .logInCallback, object: nil, userInfo: data)
+        }
     }
     
-    /*
-    class func getListOfVehiclesRequest() -> Void {
+    
+    class func getListOfVehiclesRequest(person: Person) -> Void {
         
         let parameters: Parameters = [
-            "user_id": Person.instance.id!
+            "user_id": person.id
         ]
         
         request(URL: GET_LIST_OF_VEHICLES_URL, method: .get, parameters: parameters, onSuccess: getListOfVehiclesOnSuccess, onError: defaultOnError)
@@ -82,14 +82,15 @@ class APIHelper {
     
     class func getListOfVehiclesOnSuccess(json: JSON) -> Void{
 
-    let json = JSON(json)["data"].array!
-    for vehicle in json {
-        Person.instance.arrayVehicles.removeAll()
-        Person.instance.arrayVehicles.append(Vehicle(vehicle: vehicle))
+        print(json)
+        let code = json["code"].int!
+        if code == OK {
+            let data = json.dictionary
+            NotificationCenter.default.post(name: .getVehiclesCallback, object: nil, userInfo: data)
         }
         
     }
-
+    /*
     class func editUserRequest() -> Void {
         
         let parameters: Parameters = [

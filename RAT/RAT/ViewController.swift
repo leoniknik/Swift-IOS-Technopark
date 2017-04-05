@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var facebookLogInButton: UIButton!
     
-    let person = Person()
+    var person = Person()
     
     @IBAction func logIn(_ sender: Any) {
         // TODO: проверить вводимые поля
@@ -51,21 +51,34 @@ class ViewController: UIViewController {
         
     }
     
-    /*
-    @IBAction func goToListOfVehicles(_ sender: Any){
-        performSegue(withIdentifier: "fromRegistrationToListOfVehiclesSegue", sender: nil)
+    func logInCallback(_ notification: NSNotification){
+        
+        let data = notification.userInfo as! [String : Any]
+        let id = data["user_id"]
+        person = DataBaseHelper.getPerson(email: person.email)
+        DataBaseHelper.setPersonID(person: person, id: id as! Int)
+        print(person.id)
+        performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: person)
     }
-    */
+    
+    func getVehiclesCallback(_ notification: NSNotification){
+        
+        let data = notification.userInfo as! [String : Any]
+        let vehicles = data["data"]
+        print(vehicles!)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(logInCallback(_:)), name: .logInCallback, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getVehiclesCallback(_:)), name: .getVehiclesCallback, object: nil)
     }
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromAuthorizationToListOfVehiclesSegue"{
-            Person.instance.getListOfVehiclesRequest()
+            APIHelper.getListOfVehiclesRequest(person: person)
         }
     }
-*/
+
 }
 
