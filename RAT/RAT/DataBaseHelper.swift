@@ -13,8 +13,9 @@ class DataBaseHelper {
     
     static let realm = try! Realm()
     
-    class func getPerson() -> Person{
-        return realm.objects(Person.self).first!
+    class func getPerson(email: String) -> Person{
+        let predicate = NSPredicate(format: "email = \(email)")
+        return realm.objects(Person.self).filter(predicate).first!
     }
     
     class func setPersonID(person: Person, id: Int){

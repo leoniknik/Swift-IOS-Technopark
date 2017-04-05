@@ -40,7 +40,6 @@ class RegistrationViewController: UIViewController {
     }
     
     func signUpCallback(_ notification: NSNotification){
-        //let data = notification.userInfo as! [String : Any]
         DataBaseHelper.save(object: person)
         APIHelper.logInRequest(person: person)
     }
