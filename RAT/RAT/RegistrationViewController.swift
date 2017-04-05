@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RegistrationViewController: UIViewController {
 
@@ -17,22 +18,34 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    var person = Person()
+    
     @IBAction func signUp(_ sender: Any) {
-        // TODO: проверить вводимые поля
-        Person.instance.email = emailTextField.text!
-        Person.instance.password = passwordTextField.text!
-        Person.instance.firstname = firstnameTextField.text!
-        Person.instance.lastname = lastnameTextField.text!
-        Person.instance.phone = phoneTextField.text!
-        Person.instance.createSignUpRequest()
-        // TODO: проверить зарегались мы или нет, если да то сделать переход на listofVehicles
-        self.performSegue(withIdentifier: "fromRegistrationToListOfVehiclesSegue", sender: nil)
+       
+        /*
+        person.email = emailTextField.text!
+        person.password = passwordTextField.text!
+        person.firstname = firstnameTextField.text!
+        person.lastname = lastnameTextField.text!
+        person.phone = phoneTextField.text!
+        */
+
+        person.email = "user@mail.ru"
+        person.password = "qwerty"
+        person.firstname = "user"
+        person.lastname = "userovich"
+        person.phone = "88005553535"
+        
+        APIHelper.signUpRequest(person: person)
     }
     
-
+    func signUpCallback(_ notification: NSNotification){
+        DataBaseHelper.save(object: person)
+        APIHelper.logInRequest(person: person)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(signUpCallback), name: .signUpCallback, object: nil)
     }
 }

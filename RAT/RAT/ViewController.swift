@@ -28,13 +28,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var facebookLogInButton: UIButton!
     
+    var person = Person()
+    
     @IBAction func logIn(_ sender: Any) {
         // TODO: проверить вводимые поля
-        Person.instance.email = emailTextField.text!
-        Person.instance.password = passwordTextField.text!
-        Person.instance.createLogInRequest()
-        // если зарегались
-        self.performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: nil)
+        /*
+        person.email = emailTextField.text!
+        person.password = passwordTextField.text!
+         */
+        
+        person.email = "leoniknik@mail.ru"
+        person.password = "1234"
+        
+        APIHelper.logInRequest(person: person)
+        
     }
     
     @IBAction func vkLogIn(_ sender: Any) {
@@ -44,9 +51,34 @@ class ViewController: UIViewController {
         
     }
     
+    func logInCallback(_ notification: NSNotification){
+        
+        let data = notification.userInfo as! [String : Any]
+        let id = data["user_id"]
+        person = DataBaseHelper.getPerson(email: person.email)
+        DataBaseHelper.setPersonID(person: person, id: id as! Int)
+        print(person.id)
+        performSegue(withIdentifier: "fromAuthorizationToListOfVehiclesSegue", sender: person)
+    }
+    
+    func getVehiclesCallback(_ notification: NSNotification){
+        
+        let data = notification.userInfo as! [String : Any]
+        let vehicles = data["data"]
+        print(vehicles!)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(logInCallback(_:)), name: .logInCallback, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getVehiclesCallback(_:)), name: .getVehiclesCallback, object: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromAuthorizationToListOfVehiclesSegue"{
+            APIHelper.getListOfVehiclesRequest(person: person)
+        }
+    }
+
 }
 

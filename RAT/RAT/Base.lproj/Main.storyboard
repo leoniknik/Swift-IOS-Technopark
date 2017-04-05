@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z6g-T1-TuC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z6g-T1-TuC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,7 +48,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Регистрация"/>
                                 <connections>
-                                    <segue destination="Dcc-MT-IPb" kind="show" id="6ZP-T2-Shd"/>
+                                    <segue destination="Dcc-MT-IPb" kind="show" identifier="" id="6ZP-T2-Shd"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmD-wK-idF">
@@ -280,7 +280,7 @@
                     </view>
                     <connections>
                         <outlet property="listOfCrashesTable" destination="NtL-TF-xkb" id="CoC-9W-d2x"/>
-                        <segue destination="bMK-hA-ukX" kind="show" identifier="fromListOfCrashesToCrashSeage" id="uuG-bd-ZLn"/>
+                        <segue destination="bMK-hA-ukX" kind="show" identifier="fromListOfCrashesToCrashSegue" id="uuG-bd-ZLn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4P-IX-QzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
