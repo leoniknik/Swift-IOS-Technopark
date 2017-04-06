@@ -8,11 +8,23 @@
 
 import Foundation
 import RealmSwift
+import SwiftyJSON
 
 class DataBaseHelper {
     
     static let realm = try! Realm()
     
+    class func setVehicle(person: Person, json: JSON){
+        let vehicle = Vehicle()
+        vehicle.number = json["number"].stringValue
+        vehicle.brand = json["brand"].stringValue
+        vehicle.VIN = json["VIN"].stringValue
+        vehicle.year = json["year"].stringValue
+        vehicle.model = json["model"].stringValue
+        vehicle.id = json["id"].intValue
+        vehicle.owner = person
+        save(object: vehicle)
+    }
     
     class func getPerson() -> Person{
         let predicate = NSPredicate(format: "actual == true")

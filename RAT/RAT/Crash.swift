@@ -18,5 +18,9 @@ class Crash: Object {
     dynamic var shortDescription: String = ""
     dynamic var date: String = ""
     let arrayOffers = List<Offer>()
+    //dynamic var vehicle: Vehicle?
     
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
