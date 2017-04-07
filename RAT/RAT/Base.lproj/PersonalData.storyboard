@@ -57,9 +57,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="brand" destination="n4E-gG-sHj" id="uhb-1M-IM6"/>
-                                            <outlet property="model" destination="Bfz-zi-vke" id="ipR-Qa-k9b"/>
-                                            <outlet property="number" destination="2ze-IS-D9d" id="uax-Cu-vKo"/>
+                                            <outlet property="brand" destination="n4E-gG-sHj" id="ZKh-S3-FuP"/>
+                                            <outlet property="model" destination="Bfz-zi-vke" id="ngP-dy-uKc"/>
+                                            <outlet property="number" destination="2ze-IS-D9d" id="rty-tT-Wku"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AS4-8O-bQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="521.28935532233891"/>
+            <point key="canvasLocation" x="1850" y="441"/>
         </scene>
         <!--Add/Redact vehicle controller-->
         <scene sceneID="yzI-Ng-T3Z">
