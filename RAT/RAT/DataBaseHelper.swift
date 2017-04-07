@@ -8,36 +8,53 @@
 
 import Foundation
 import RealmSwift
+import SwiftyJSON
 
 class DataBaseHelper {
     
     static let realm = try! Realm()
     
-    class func getPerson(email: String) -> Person{
-        let predicate = NSPredicate(format: "email = \(email)")
+    class func setVehicle(person: Person, json: JSON){
+        let vehicle = Vehicle()
+        vehicle.number = json["number"].stringValue
+        vehicle.brand = json["brand"].stringValue
+        vehicle.VIN = json["VIN"].stringValue
+        vehicle.year = json["year"].stringValue
+        vehicle.model = json["model"].stringValue
+        vehicle.id = json["id"].intValue
+        vehicle.owner = person
+        save(object: vehicle)
+    }
+    
+    class func getPerson() -> Person{
+        let predicate = NSPredicate(format: "actual == true")
         return realm.objects(Person.self).filter(predicate).first!
     }
     
-    class func setPersonID(person: Person, id: Int){
-        try! realm.write {
-            person.id = id
+    
+    class func clearActualPerson(){
+        let persons = realm.objects(Person.self)
+        for person in persons {
+            try! realm.write {
+                person.actual = false
+            }
         }
     }
     
-    class func setPerson(person: Person, id: Int, email: String, password: String, firstname: String, lastname: String, phone: String){
-        try! realm.write {
+    class func setPerson(person: Person, id: Int, email: String, firstname: String, lastname: String, phone: String, actual: Bool){
             person.id = id
             person.email = email
-            person.password = password
             person.firstname = firstname
             person.lastname = lastname
             person.phone = phone
-        }
+            person.actual = actual
+            save(object: person)
     }
+    
     
     class func save(object: Object){
         try! realm.write {
-            realm.add(object)
+            realm.add(object, update: true)
         }
     }
 }

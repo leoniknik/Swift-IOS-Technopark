@@ -17,7 +17,12 @@ class Vehicle: Object{
     dynamic var brand: String = ""
     dynamic var model: String = ""
     dynamic var year: String = ""
-    let historyCrashes = List<Crash>()
-    let actualCrashes = List<Crash>()
-
+    dynamic var owner: Person?
+    //var historyCrashes = List<Crash>()
+    //var actualCrashes = List<Crash>()
+    
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
