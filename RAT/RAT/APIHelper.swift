@@ -13,7 +13,7 @@ import SwiftyJSON
 class APIHelper {
     
     
-    static let SERVER_IP="http://192.168.1.39:8000"
+    static let SERVER_IP="http://192.168.1.33:8000"
     
     static let SIGNUP_URL = "\(SERVER_IP)/api/signup"
     static let LOGIN_URL = "\(SERVER_IP)/api/signin"
@@ -91,6 +91,26 @@ class APIHelper {
         }
         
     }
+    
+    class func getListOfActualCrashesRequest(vehicle: Vehicle) -> Void {
+        
+        let parameters: Parameters = [
+            "vehicle_id": vehicle.id
+        ]
+        
+        request(URL: GET_LIST_OF_ACTUAL_CRASHES_URL, method: .get, parameters: parameters, onSuccess: getListOfActualCrashesOnSuccess, onError: defaultOnError)
+    }
+    
+    class func getListOfActualCrashesOnSuccess(json: JSON) -> Void{
+        print(json)
+        let code = json["code"].int!
+        if code == OK {
+            let data = json.dictionaryValue
+            NotificationCenter.default.post(name: .getListOfActualCrashesCallback, object: nil, userInfo: data)
+        }
+        
+    }
+    
     /*
     class func editUserRequest() -> Void {
         
@@ -130,15 +150,7 @@ class APIHelper {
         request(URL: GET_LIST_OF_HISTORY_CRASHES_URL, method: .get, parameters: parameters, onSuccess: defaultOnSuccess, onError: defaultOnError)
     }
 
-    class func getListOfActualCrashesRequest(vehicle: Vehicle) -> Void {
-        
-        let parameters: Parameters = [
-            "vehicle_id": vehicle.id!
-        ]
-        
-        request(URL: GET_LIST_OF_ACTUAL_CRASHES_URL, method: .get, parameters: parameters, onSuccess: defaultOnSuccess, onError: defaultOnError)
-        
-    }
+
     
     class func editVehicleRequest(vehicle: Vehicle) -> Void {
         

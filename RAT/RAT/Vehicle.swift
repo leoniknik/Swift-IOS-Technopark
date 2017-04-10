@@ -18,9 +18,8 @@ class Vehicle: Object{
     dynamic var model: String = ""
     dynamic var year: String = ""
     dynamic var owner: Person?
-    //var historyCrashes = List<Crash>()
-    //var actualCrashes = List<Crash>()
-    
+    var historyCrashes = LinkingObjects(fromType: Crash.self, property: "vehicle")
+    var actualCrashes = LinkingObjects(fromType: Crash.self, property: "vehicle")
     
     override static func primaryKey() -> String? {
         return "id"

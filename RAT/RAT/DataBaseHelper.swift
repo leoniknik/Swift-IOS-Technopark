@@ -51,6 +51,16 @@ class DataBaseHelper {
             save(object: person)
     }
     
+    class func setCrash(vehicle: Vehicle, json: JSON){
+        let crash = Crash()
+        crash.date = json["date"].stringValue
+        crash.shortDescription = json["description__short_description"].stringValue
+        crash.fullDescription = json["description__full_description"].stringValue
+        crash.code = json["description__code"].stringValue
+        crash.id = json["id"].intValue
+        crash.vehicle = vehicle
+        save(object: crash)
+    }
     
     class func save(object: Object){
         try! realm.write {
