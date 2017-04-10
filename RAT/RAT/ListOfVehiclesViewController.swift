@@ -30,7 +30,7 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listOfVehiclesTable.dequeueReusableCell(withIdentifier: "VehicleCell") as! VehicleCell
-        let index = indexPath.item
+        let index = indexPath.row
         cell.number.text = person.vehicles[index].number
         cell.brand.text = person.vehicles[index].brand
         cell.model.text = person.vehicles[index].model
@@ -38,7 +38,11 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "fromListOfVehicleToListOfCrashesSegue", sender: nil) // transition
+        let index = indexPath.row
+        let vehicle = person.vehicles[index]
+        APIHelper.getListOfActualCrashesRequest(vehicle: vehicle)
+        APIHelper.getListOfHistoryCrashesRequest(vehicle: vehicle)
+        self.performSegue(withIdentifier: "fromListOfVehicleToListOfCrashesSegue", sender: vehicle) // transition
     }
  
     func getVehiclesCallback(_ notification: NSNotification){
@@ -49,5 +53,10 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
             DataBaseHelper.setVehicle(person: person, json: vehicle)
         }
         self.listOfVehiclesTable.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationController = segue.destination as! ListOfCrashesViewController
+        destinationController.vehicle = sender as! Vehicle
     }
 }
