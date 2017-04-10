@@ -58,6 +58,7 @@ class DataBaseHelper {
         crash.fullDescription = json["description__full_description"].stringValue
         crash.code = json["description__code"].stringValue
         crash.id = json["id"].intValue
+        crash.actual = json["actual"].boolValue
         crash.vehicle = vehicle
         save(object: crash)
     }

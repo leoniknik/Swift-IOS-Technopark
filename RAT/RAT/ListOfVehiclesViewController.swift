@@ -41,6 +41,7 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
         let index = indexPath.row
         let vehicle = person.vehicles[index]
         APIHelper.getListOfActualCrashesRequest(vehicle: vehicle)
+        APIHelper.getListOfHistoryCrashesRequest(vehicle: vehicle)
         self.performSegue(withIdentifier: "fromListOfVehicleToListOfCrashesSegue", sender: vehicle) // transition
     }
  

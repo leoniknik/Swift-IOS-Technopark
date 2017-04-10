@@ -106,11 +106,29 @@ class APIHelper {
         let code = json["code"].int!
         if code == OK {
             let data = json.dictionaryValue
-            NotificationCenter.default.post(name: .getListOfActualCrashesCallback, object: nil, userInfo: data)
+            NotificationCenter.default.post(name: .getListOfCrashesCallback, object: nil, userInfo: data)
         }
         
     }
     
+    class func getListOfHistoryCrashesRequest(vehicle: Vehicle) -> Void {
+        
+        let parameters: Parameters = [
+            "vehicle_id": vehicle.id
+        ]
+        
+        request(URL: GET_LIST_OF_HISTORY_CRASHES_URL, method: .get, parameters: parameters, onSuccess:getListOfHistoryCrashesOnSuccess, onError: defaultOnError)
+    }
+    
+    class func getListOfHistoryCrashesOnSuccess(json: JSON) -> Void{
+        print(json)
+        let code = json["code"].int!
+        if code == OK {
+            let data = json.dictionaryValue
+            NotificationCenter.default.post(name: .getListOfCrashesCallback, object: nil, userInfo: data)
+        }
+        
+    }
     /*
     class func editUserRequest() -> Void {
         
@@ -141,14 +159,7 @@ class APIHelper {
 
     }
 
-       class func getListOfHistoryCrashesRequest(vehicle: Vehicle) -> Void {
-        
-        let parameters: Parameters = [
-            "vehicle_id": vehicle.id!
-        ]
-        
-        request(URL: GET_LIST_OF_HISTORY_CRASHES_URL, method: .get, parameters: parameters, onSuccess: defaultOnSuccess, onError: defaultOnError)
-    }
+
 
 
     

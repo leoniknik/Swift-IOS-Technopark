@@ -14,6 +14,8 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
 
     @IBOutlet weak var listOfCrashesTable: UITableView!
     var vehicle = Vehicle()
+    var actualCrashes: [Crash] = []
+    var historyCrashes: [Crash] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +23,21 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
         listOfCrashesTable.delegate = self
         // listOfCrashesTable.separatorStyle = .none // delete all separators
         listOfCrashesTable.tableFooterView = UIView() // delete excess separators
-        NotificationCenter.default.addObserver(self, selector: #selector(getListOfActualCrashesCallback(_:)), name: .getListOfActualCrashesCallback, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getListOfCrashesCallback(_:)), name: .getListOfCrashesCallback, object: nil)
+        actualCrashes = vehicle.getActualcrashes()
+        historyCrashes = vehicle.getHistorycrashes()
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vehicle.actualCrashes.count
+        return actualCrashes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listOfCrashesTable.dequeueReusableCell(withIdentifier: "CrashCell") as! CrashCell
         let index = indexPath.row
-        cell.code.text = vehicle.actualCrashes[index].code
-        cell.shortDecription.text = vehicle.actualCrashes[index].shortDescription
+        cell.code.text = actualCrashes[index].code
+        cell.shortDecription.text = actualCrashes[index].shortDescription
         return cell
     }
     
@@ -49,14 +53,16 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
     }
     */
     
-    func getListOfActualCrashesCallback(_ notification: NSNotification){
+    func getListOfCrashesCallback(_ notification: NSNotification){
         
         let data = notification.userInfo as! [String : JSON]
         let crashes = data["data"]!.arrayValue
         for crash in crashes {
             DataBaseHelper.setCrash(vehicle: vehicle, json: crash)
         }
+        historyCrashes = vehicle.getHistorycrashes()
+        actualCrashes = vehicle.getActualcrashes()
         self.listOfCrashesTable.reloadData()
- 
+        
     }
 }
