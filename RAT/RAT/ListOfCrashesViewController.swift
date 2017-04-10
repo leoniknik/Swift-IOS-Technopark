@@ -11,11 +11,17 @@ import SwiftyJSON
 
 class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    enum TypeCrash{
+        case actual, history
+    }
 
+    @IBOutlet weak var chooseListOfCrashesSegmentedControl: UISegmentedControl!
+    
     @IBOutlet weak var listOfCrashesTable: UITableView!
     var vehicle = Vehicle()
     var actualCrashes: [Crash] = []
     var historyCrashes: [Crash] = []
+    var nowTypeCrash : TypeCrash = TypeCrash.actual
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +36,30 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actualCrashes.count
+        
+        switch nowTypeCrash {
+        case .actual:
+            return actualCrashes.count
+        case .history:
+            return historyCrashes.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = listOfCrashesTable.dequeueReusableCell(withIdentifier: "CrashCell") as! CrashCell
         let index = indexPath.row
-        cell.code.text = actualCrashes[index].code
-        cell.shortDecription.text = actualCrashes[index].shortDescription
+        
+        switch nowTypeCrash {
+        case .actual:
+            cell.code.text = actualCrashes[index].code
+            cell.shortDecription.text = actualCrashes[index].shortDescription
+        case .history:
+            cell.code.text = historyCrashes[index].code
+            cell.shortDecription.text = historyCrashes[index].shortDescription
+        }
+        
         return cell
     }
     
@@ -65,4 +87,20 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
         self.listOfCrashesTable.reloadData()
         
     }
+    
+    @IBAction func changeList(_ sender: Any) {
+        
+        switch chooseListOfCrashesSegmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            nowTypeCrash = TypeCrash.actual
+        case 1:
+            nowTypeCrash = TypeCrash.history
+        default:
+            break;
+        }
+        self.listOfCrashesTable.reloadData()
+ 
+    }
+ 
 }

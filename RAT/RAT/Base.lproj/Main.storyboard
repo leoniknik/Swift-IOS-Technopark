@@ -791,14 +791,18 @@
                                 <rect key="frame" x="0.0" y="639" width="375" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Actual"/>
+                                    <segment title="History"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeList:" destination="bE5-5f-jRb" eventType="valueChanged" id="9WN-Lx-6v3"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="chooseListOfCrashesSegmentedControl" destination="GI5-NJ-ggC" id="onc-er-ODh"/>
                         <outlet property="listOfCrashesTable" destination="FiQ-1e-LGV" id="GF6-Yr-yz1"/>
                         <segue destination="bMK-hA-ukX" kind="show" identifier="fromListOfCrashesToCrashSegue" id="sNC-gj-PZA"/>
                     </connections>
