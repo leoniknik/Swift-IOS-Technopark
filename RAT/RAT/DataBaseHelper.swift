@@ -63,6 +63,20 @@ class DataBaseHelper {
         save(object: crash)
     }
     
+    class func setOffer(crash: Crash, json: JSON){
+        let offer = Offer()
+        let service = Service()
+        offer.message = json["message"].stringValue
+        offer.price = json["price"].intValue
+        offer.id = json["id"].intValue
+        offer.crash = crash
+        offer.service = service
+        offer.service!.id = json["service_id"].intValue
+        offer.service!.name = json["service__name"].stringValue
+        save(object: service)
+        save(object: offer)
+    }
+    
     class func save(object: Object){
         try! realm.write {
             realm.add(object, update: true)

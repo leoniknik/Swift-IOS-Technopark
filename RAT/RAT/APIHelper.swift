@@ -129,6 +129,25 @@ class APIHelper {
         }
         
     }
+    
+    class func getListOfOffersRequest(crash: Crash) -> Void {
+        
+        let parameters: Parameters = [
+            "crash_id": crash.id
+        ]
+        
+        request(URL: GET_LIST_OF_OFFERS, method: .get, parameters: parameters, onSuccess: getListOfOffersOnSuccess, onError: defaultOnError)
+    }
+    
+    class func getListOfOffersOnSuccess(json: JSON) -> Void{
+        print(json)
+        let code = json["code"].int!
+        if code == OK {
+            let data = json.dictionaryValue
+            NotificationCenter.default.post(name: .getListOfOffersCallback, object: nil, userInfo: data)
+        }
+        
+    }
     /*
     class func editUserRequest() -> Void {
         
@@ -175,15 +194,6 @@ class APIHelper {
         ]
         
         request(URL: EDIT_VEHICLE_URL, method: .post, parameters: parameters, onSuccess: defaultOnSuccess, onError: defaultOnError)
-    }
-
-    class func getListOfOffersRequest(crash: Crash) -> Void {
-        
-        let parameters: Parameters = [
-            "crash_id": crash.id
-        ]
-        
-        request(URL: GET_LIST_OF_OFFERS, method: .get, parameters: parameters, onSuccess: defaultOnSuccess, onError: defaultOnError)
     }
     
     */

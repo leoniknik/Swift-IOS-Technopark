@@ -14,8 +14,10 @@
 		ED97321D1E8AFCD200FCED3F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97321C1E8AFCD200FCED3F /* Person.swift */; };
 		ED99E5A41E8550260039EBF7 /* ValidatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */; };
 		EDA390F61E94375C002B0C65 /* NotificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA390F51E94375C002B0C65 /* NotificationRouter.swift */; };
+		EDA8AE721E9EFA3B005BEC56 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA8AE711E9EFA3B005BEC56 /* OfferCell.swift */; };
 		EDA929DC1E8C7F97000D67BA /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA929DB1E8C7F97000D67BA /* Review.swift */; };
 		EDA929DE1E8C7FAB000D67BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA929DD1E8C7FAB000D67BA /* Service.swift */; };
+		EDAC87BA1E9EDC5B001E63E2 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC87B91E9EDC5B001E63E2 /* CrashViewController.swift */; };
 		EDAFF5F21E7B3C630069F42E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFF5F11E7B3C630069F42E /* AppDelegate.swift */; };
 		EDAFF5F41E7B3C630069F42E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFF5F31E7B3C630069F42E /* ViewController.swift */; };
 		EDAFF5F71E7B3C630069F42E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAFF5F51E7B3C630069F42E /* Main.storyboard */; };
@@ -39,8 +41,10 @@
 		ED97321C1E8AFCD200FCED3F /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		ED99E5A31E8550260039EBF7 /* ValidatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorHelper.swift; sourceTree = "<group>"; };
 		EDA390F51E94375C002B0C65 /* NotificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRouter.swift; sourceTree = "<group>"; };
+		EDA8AE711E9EFA3B005BEC56 /* OfferCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		EDA929DB1E8C7F97000D67BA /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		EDA929DD1E8C7FAB000D67BA /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		EDAC87B91E9EDC5B001E63E2 /* CrashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashViewController.swift; sourceTree = "<group>"; };
 		EDAFF5EE1E7B3C630069F42E /* RAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAFF5F11E7B3C630069F42E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDAFF5F31E7B3C630069F42E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				EDAFF5F31E7B3C630069F42E /* ViewController.swift */,
 				ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */,
 				EDCC4B771E8D26D900D94FB7 /* ListOfVehiclesViewController.swift */,
+				EDAC87B91E9EDC5B001E63E2 /* CrashViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 				EDAFF5F51E7B3C630069F42E /* Main.storyboard */,
 				EDAFF5F81E7B3C630069F42E /* Assets.xcassets */,
 				EDAFF5FD1E7B3C630069F42E /* Info.plist */,
+				EDA8AE711E9EFA3B005BEC56 /* OfferCell.swift */,
 			);
 			path = RAT;
 			sourceTree = "<group>";
@@ -282,10 +288,12 @@
 				EDA929DE1E8C7FAB000D67BA /* Service.swift in Sources */,
 				EDBAEAC41E91AF73008BC298 /* APIHelper.swift in Sources */,
 				EDD8A79C1E93DCE800CC57A1 /* DataBaseHelper.swift in Sources */,
+				EDA8AE721E9EFA3B005BEC56 /* OfferCell.swift in Sources */,
 				EDCC4B781E8D26D900D94FB7 /* ListOfVehiclesViewController.swift in Sources */,
 				ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */,
 				EDAFF5F41E7B3C630069F42E /* ViewController.swift in Sources */,
 				EDAFF5F21E7B3C630069F42E /* AppDelegate.swift in Sources */,
+				EDAC87BA1E9EDC5B001E63E2 /* CrashViewController.swift in Sources */,
 				EDA929DC1E8C7F97000D67BA /* Review.swift in Sources */,
 				ED7017CA1E7D49FF00955C99 /* CrashCell.swift in Sources */,
 				ED7017C71E7D368F00955C99 /* ListOfCrashesViewController.swift in Sources */,

@@ -14,8 +14,8 @@ class Offer: Object {
     dynamic var id: Int = 0
     dynamic var price: Int = 0
     dynamic var message: String = ""
-    //dynamic var crash: Crash?
-    //dynamic var owner: Service?
+    dynamic var crash: Crash?
+    dynamic var service: Service?
     
     override static func primaryKey() -> String? {
         return "id"
