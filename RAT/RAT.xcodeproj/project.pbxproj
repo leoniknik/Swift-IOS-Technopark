@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A30D1A4CE1402B47963B8C8 /* Pods_RAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADC1D6078B2619FCD9EB281 /* Pods_RAT.framework */; };
+		ED22BB7B1E9F9FCE0084320F /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */; };
+		ED22BB7D1E9FA0560084320F /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */; };
 		ED7017C71E7D368F00955C99 /* ListOfCrashesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */; };
 		ED7017CA1E7D49FF00955C99 /* CrashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7017C91E7D49FF00955C99 /* CrashCell.swift */; };
 		ED80EF6D1E7C8AD10066AD83 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */; };
@@ -35,6 +37,8 @@
 		0FBD12C2736B482C6F3FCABF /* Pods-RAT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.debug.xcconfig"; sourceTree = "<group>"; };
 		5ADC1D6078B2619FCD9EB281 /* Pods_RAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D24D3F6E7B37CE9B38B235 /* Pods-RAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.release.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.release.xcconfig"; sourceTree = "<group>"; };
+		ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
+		ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfCrashesViewController.swift; sourceTree = "<group>"; };
 		ED7017C91E7D49FF00955C99 /* CrashCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashCell.swift; sourceTree = "<group>"; };
 		ED80EF6C1E7C8AD10066AD83 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				ED7017C61E7D368F00955C99 /* ListOfCrashesViewController.swift */,
 				EDCC4B771E8D26D900D94FB7 /* ListOfVehiclesViewController.swift */,
 				EDAC87B91E9EDC5B001E63E2 /* CrashViewController.swift */,
+				ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */,
+				ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -294,12 +300,14 @@
 				EDAFF5F41E7B3C630069F42E /* ViewController.swift in Sources */,
 				EDAFF5F21E7B3C630069F42E /* AppDelegate.swift in Sources */,
 				EDAC87BA1E9EDC5B001E63E2 /* CrashViewController.swift in Sources */,
+				ED22BB7D1E9FA0560084320F /* ConfirmViewController.swift in Sources */,
 				EDA929DC1E8C7F97000D67BA /* Review.swift in Sources */,
 				ED7017CA1E7D49FF00955C99 /* CrashCell.swift in Sources */,
 				ED7017C71E7D368F00955C99 /* ListOfCrashesViewController.swift in Sources */,
 				EDB05D311E8BD8F200FFE86E /* Offer.swift in Sources */,
 				ED97321D1E8AFCD200FCED3F /* Person.swift in Sources */,
 				ED99E5A41E8550260039EBF7 /* ValidatorHelper.swift in Sources */,
+				ED22BB7B1E9F9FCE0084320F /* ServiceViewController.swift in Sources */,
 				EDB05D2F1E8BD8CE00FFE86E /* Crash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
