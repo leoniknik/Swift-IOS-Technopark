@@ -36,8 +36,8 @@ class ViewController: UIViewController {
         person.password = passwordTextField.text!
          */
         let person = Person()
-        person.email = "leoniknik@mail.ru"
-        person.password = "1234"
+        person.email = "user@mail.ru"
+        person.password = "qwerty"
         
         APIHelper.logInRequest(person: person)
         

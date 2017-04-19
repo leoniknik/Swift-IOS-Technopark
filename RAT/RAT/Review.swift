@@ -12,6 +12,9 @@ import RealmSwift
 class Review: Object {
     
     dynamic var id = 0
+    dynamic var date: String = ""
+    dynamic var text: String = ""
+    var service: Service?
     
     override static func primaryKey() -> String? {
         return "id"

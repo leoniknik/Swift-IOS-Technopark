@@ -56,7 +56,9 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromListOfVehicleToListOfCrashesSegue" {
         let destinationController = segue.destination as! ListOfCrashesViewController
         destinationController.vehicle = sender as! Vehicle
+        }
     }
 }
