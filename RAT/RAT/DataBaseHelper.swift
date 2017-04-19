@@ -77,6 +77,24 @@ class DataBaseHelper {
         save(object: offer)
     }
     
+    class func setService(json: JSON){
+        let service = Service()
+        service.address = json["address"].stringValue
+        service.id = json["id"].intValue
+        service.name = json["name"].stringValue
+        service.phone = json["phone"].stringValue
+        save(object: service)
+    }
+    
+    class func setReview(service: Service, json: JSON){
+        let review = Review()
+        review.date = json["date"].stringValue
+        review.id = json["id"].intValue
+        review.text = json["text"].stringValue
+        review.service = service
+        save(object: review)
+    }
+    
     class func save(object: Object){
         try! realm.write {
             realm.add(object, update: true)

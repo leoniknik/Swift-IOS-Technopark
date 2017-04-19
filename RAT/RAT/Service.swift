@@ -12,7 +12,7 @@ import RealmSwift
 class Service: Object {
     
     dynamic var id = 0
-    dynamic var adress: String = ""
+    dynamic var address: String = ""
     dynamic var serviceDescription: String = ""
     dynamic var name: String = ""
     dynamic var phone: String = ""
