@@ -47,16 +47,8 @@ class CrashViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
-    /*
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let index = indexPath.row
-        var crash = Crash()
-
-        crash = historyCrashes[index]
-        APIHelper.getListOfOffersRequest(crash: crash)
-        self.performSegue(withIdentifier: "fromListOfCrashesToCrashSegue", sender: crash)
-    }
-    */
+    
+    
     
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
