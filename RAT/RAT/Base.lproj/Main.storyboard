@@ -457,7 +457,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fQF-C4-HRl" id="Nle-Kp-6Tc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -798,7 +798,7 @@
             </objects>
             <point key="canvasLocation" x="1681" y="1558"/>
         </scene>
-        <!--List Of Crashes View Controller-->
+        <!--Title-->
         <scene sceneID="Xd5-QJ-3j3">
             <objects>
                 <viewController id="bE5-5f-jRb" customClass="ListOfCrashesViewController" customModule="RAT" customModuleProvider="target" sceneMemberID="viewController">
@@ -859,6 +859,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="RS4-Rv-qqX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="gge-sn-dGu"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="chooseListOfCrashesSegmentedControl" destination="GI5-NJ-ggC" id="onc-er-ODh"/>
                         <outlet property="listOfCrashesTable" destination="FiQ-1e-LGV" id="GF6-Yr-yz1"/>
