@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A30D1A4CE1402B47963B8C8 /* Pods_RAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADC1D6078B2619FCD9EB281 /* Pods_RAT.framework */; };
+		5DAB0C4D1EB3300600AC1F77 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAB0C4C1EB3300600AC1F77 /* MapKit.framework */; };
+		5DAB0C4F1EB3304600AC1F77 /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAB0C4E1EB3304600AC1F77 /* mapView.swift */; };
 		ED22BB7B1E9F9FCE0084320F /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */; };
 		ED22BB7D1E9FA0560084320F /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */; };
 		ED22BB7F1E9FAB950084320F /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22BB7E1E9FAB950084320F /* ReviewCell.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		0FBD12C2736B482C6F3FCABF /* Pods-RAT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.debug.xcconfig"; sourceTree = "<group>"; };
 		5ADC1D6078B2619FCD9EB281 /* Pods_RAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DAB0C4C1EB3300600AC1F77 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5DAB0C4E1EB3304600AC1F77 /* mapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; };
 		E0D24D3F6E7B37CE9B38B235 /* Pods-RAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.release.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.release.xcconfig"; sourceTree = "<group>"; };
 		ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DAB0C4D1EB3300600AC1F77 /* MapKit.framework in Frameworks */,
 				0A30D1A4CE1402B47963B8C8 /* Pods_RAT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +86,7 @@
 		150C0AC8CA06FE5B40374530 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DAB0C4C1EB3300600AC1F77 /* MapKit.framework */,
 				5ADC1D6078B2619FCD9EB281 /* Pods_RAT.framework */,
 			);
 			name = Frameworks;
@@ -105,6 +111,7 @@
 				EDAC87B91E9EDC5B001E63E2 /* CrashViewController.swift */,
 				ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */,
 				ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */,
+				5DAB0C4E1EB3304600AC1F77 /* mapView.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -312,6 +319,7 @@
 				ED99E5A41E8550260039EBF7 /* ValidatorHelper.swift in Sources */,
 				ED22BB7B1E9F9FCE0084320F /* ServiceViewController.swift in Sources */,
 				EDB05D2F1E8BD8CE00FFE86E /* Crash.swift in Sources */,
+				5DAB0C4F1EB3304600AC1F77 /* mapView.swift in Sources */,
 				ED22BB7F1E9FAB950084320F /* ReviewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
