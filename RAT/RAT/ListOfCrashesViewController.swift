@@ -31,7 +31,6 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
         NotificationCenter.default.addObserver(self, selector: #selector(getListOfCrashesCallback(_:)), name: .getListOfCrashesCallback, object: nil)
         actualCrashes = vehicle.getActualcrashes()
         historyCrashes = vehicle.getHistorycrashes()
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,7 +91,6 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
         historyCrashes = vehicle.getHistorycrashes()
         actualCrashes = vehicle.getActualcrashes()
         self.listOfCrashesTable.reloadData()
-        
     }
     
     

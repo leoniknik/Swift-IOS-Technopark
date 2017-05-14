@@ -44,7 +44,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func vkLogIn(_ sender: Any) {
-        
+        let vk = VKHelper()
+        vk.authorize()
     }
     @IBAction func facebookLogIn(_ sender: Any) {
         
@@ -66,6 +67,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(logInCallback(_:)), name: .logInCallback, object: nil)
     }
     
