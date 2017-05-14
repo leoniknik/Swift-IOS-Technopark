@@ -16,9 +16,6 @@
  *
  **************************************************************************/
 
-#include <realm/column_binary.hpp>
-#include <realm/column_timestamp.hpp>
-
 namespace realm {
 
 inline MixedColumn::MixedColumn(Allocator& alloc, ref_type ref, Table* table, size_t column_ndx)

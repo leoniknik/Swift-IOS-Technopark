@@ -245,7 +245,7 @@ public final class List<T: Object>: ListBase {
      - parameter property: The name of a property whose minimum value is desired.
      */
     public func min<U: MinMaxType>(ofProperty property: String) -> U? {
-        return _rlmArray.min(ofProperty: property).map(dynamicBridgeCast)
+        return filter(NSPredicate(value: true)).min(ofProperty: property)
     }
 
     /**
@@ -257,7 +257,7 @@ public final class List<T: Object>: ListBase {
      - parameter property: The name of a property whose maximum value is desired.
      */
     public func max<U: MinMaxType>(ofProperty property: String) -> U? {
-        return _rlmArray.max(ofProperty: property).map(dynamicBridgeCast)
+        return filter(NSPredicate(value: true)).max(ofProperty: property)
     }
 
     /**
@@ -268,7 +268,7 @@ public final class List<T: Object>: ListBase {
      - parameter property: The name of a property whose values should be summed.
      */
     public func sum<U: AddableType>(ofProperty property: String) -> U {
-        return dynamicBridgeCast(fromObjectiveC: _rlmArray.sum(ofProperty: property))
+        return filter(NSPredicate(value: true)).sum(ofProperty: property)
     }
 
     /**
@@ -279,7 +279,7 @@ public final class List<T: Object>: ListBase {
      - parameter property: The name of a property whose average value should be calculated.
      */
     public func average<U: AddableType>(ofProperty property: String) -> U? {
-        return _rlmArray.average(ofProperty: property).map(dynamicBridgeCast)
+        return filter(NSPredicate(value: true)).average(ofProperty: property)
     }
 
     // MARK: Mutation

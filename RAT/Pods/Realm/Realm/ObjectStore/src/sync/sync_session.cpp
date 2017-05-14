@@ -153,8 +153,7 @@ struct sync_session_states::WaitingForAccessToken : public SyncSession::State {
         if (session.m_session_has_been_bound) {
             session.m_session->refresh(std::move(access_token));
         } else {
-            session.m_session->bind(*session.m_server_url, std::move(access_token),
-                                    session.m_config.client_validate_ssl, session.m_config.ssl_trust_certificate_path);
+            session.m_session->bind(*session.m_server_url, std::move(access_token));
             session.m_session_has_been_bound = true;
         }
 
@@ -414,7 +413,6 @@ void SyncSession::handle_error(SyncError error)
             // Connection level errors
             case ProtocolError::connection_closed:
             case ProtocolError::other_error:
-            case ProtocolError::pong_timeout:
                 // Not real errors, don't need to be reported to the binding.
                 return;
             case ProtocolError::unknown_message:
@@ -425,7 +423,7 @@ void SyncSession::handle_error(SyncError error)
             case ProtocolError::reuse_of_session_ident:
             case ProtocolError::bound_in_other_session:
             case ProtocolError::bad_message_order:
-            case ProtocolError::malformed_http_request:
+            case ProtocolError::pong_timeout:
                 break;
             // Session errors
             case ProtocolError::session_closed:

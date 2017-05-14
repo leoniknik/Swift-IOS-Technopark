@@ -59,7 +59,6 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
         if segue.identifier == "fromListOfVehicleToListOfCrashesSegue" {
         let destinationController = segue.destination as! ListOfCrashesViewController
         destinationController.vehicle = sender as! Vehicle
-            
         }
     }
 }

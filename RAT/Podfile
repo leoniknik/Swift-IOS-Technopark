@@ -6,6 +6,5 @@ target 'RAT' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'RealmSwift'
-  pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git'
+  pod 'RealmSwift', '~> 2.5.0'
 end

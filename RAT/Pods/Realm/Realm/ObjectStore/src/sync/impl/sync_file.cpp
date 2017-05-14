@@ -27,7 +27,7 @@
 #include <sstream>
 #include <system_error>
 
-#ifdef _WIN32
+#if WIN32
 #include <io.h>
 #include <fcntl.h>
 

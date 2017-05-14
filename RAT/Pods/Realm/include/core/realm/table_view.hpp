@@ -19,11 +19,13 @@
 #ifndef REALM_TABLE_VIEW_HPP
 #define REALM_TABLE_VIEW_HPP
 
-#include <realm/column.hpp>
-#include <realm/link_view.hpp>
-#include <realm/table.hpp>
-#include <realm/util/features.h>
 #include <realm/views.hpp>
+#include <realm/table.hpp>
+#include <realm/link_view.hpp>
+#include <realm/column.hpp>
+#include <realm/exceptions.hpp>
+#include <realm/util/features.h>
+#include <realm/group_shared.hpp>
 
 namespace realm {
 

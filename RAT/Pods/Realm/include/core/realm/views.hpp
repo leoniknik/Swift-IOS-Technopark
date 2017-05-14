@@ -22,8 +22,6 @@
 #include <realm/column.hpp>
 #include <realm/handover_defs.hpp>
 
-#include <vector>
-
 namespace realm {
 
 const int64_t detached_ref = -1;
