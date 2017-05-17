@@ -13,7 +13,7 @@ import SwiftyJSON
 class APIHelper {
     
     
-    static let SERVER_IP="http://192.168.1.33:8000"
+    static let SERVER_IP="http://192.168.1.44:8000"
     
     static let SIGNUP_URL = "\(SERVER_IP)/api/signup"
     static let LOGIN_URL = "\(SERVER_IP)/api/signin"

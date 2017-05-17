@@ -11,6 +11,7 @@
 		5D4A18671EBCBA9400678C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4A18661EBCBA9400678C91 /* Assets.xcassets */; };
 		5DAB0C4D1EB3300600AC1F77 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAB0C4C1EB3300600AC1F77 /* MapKit.framework */; };
 		5DAB0C4F1EB3304600AC1F77 /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAB0C4E1EB3304600AC1F77 /* mapView.swift */; };
+		CA3F19CC1ECCF2DE00E0682C /* VehicleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F19CB1ECCF2DE00E0682C /* VehicleTabBarController.swift */; };
 		CAF3811B1EC9270800DC559D /* VKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3811A1EC9270800DC559D /* VKHelper.swift */; };
 		ED22BB7B1E9F9FCE0084320F /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */; };
 		ED22BB7D1E9FA0560084320F /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */; };
@@ -44,6 +45,7 @@
 		5DAB0C4E1EB3304600AC1F77 /* mapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; };
 		A34E6BECE7F6DFC49F93F745 /* Pods_RAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F7872392D345EFD764BB23 /* Pods-RAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAT.release.xcconfig"; path = "Pods/Target Support Files/Pods-RAT/Pods-RAT.release.xcconfig"; sourceTree = "<group>"; };
+		CA3F19CB1ECCF2DE00E0682C /* VehicleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleTabBarController.swift; sourceTree = "<group>"; };
 		CAF3811A1EC9270800DC559D /* VKHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKHelper.swift; sourceTree = "<group>"; };
 		ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				ED22BB7A1E9F9FCE0084320F /* ServiceViewController.swift */,
 				ED22BB7C1E9FA0560084320F /* ConfirmViewController.swift */,
 				5DAB0C4E1EB3304600AC1F77 /* mapView.swift */,
+				CA3F19CB1ECCF2DE00E0682C /* VehicleTabBarController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				ED99E5A41E8550260039EBF7 /* ValidatorHelper.swift in Sources */,
 				ED22BB7B1E9F9FCE0084320F /* ServiceViewController.swift in Sources */,
 				EDB05D2F1E8BD8CE00FFE86E /* Crash.swift in Sources */,
+				CA3F19CC1ECCF2DE00E0682C /* VehicleTabBarController.swift in Sources */,
 				5DAB0C4F1EB3304600AC1F77 /* mapView.swift in Sources */,
 				ED22BB7F1E9FAB950084320F /* ReviewCell.swift in Sources */,
 			);
