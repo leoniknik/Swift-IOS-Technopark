@@ -41,8 +41,7 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
         let index = indexPath.row
         let vehicle = person.vehicles[index]
         APIHelper.getListOfActualCrashesRequest(vehicle: vehicle)
-        APIHelper.getListOfHistoryCrashesRequest(vehicle: vehicle)
-        self.performSegue(withIdentifier: "fromListOfVehicleToListOfCrashesSegue", sender: vehicle) // transition
+        self.performSegue(withIdentifier: "fromListOfVehicleToListOfCrashesSegue", sender: vehicle)
     }
  
     func getVehiclesCallback(_ notification: NSNotification){
@@ -56,9 +55,17 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromListOfVehicleToListOfCrashesSegue" {
-        let destinationController = segue.destination as! ListOfCrashesViewController
-        destinationController.vehicle = sender as! Vehicle
-        }
+        let barViewController = segue.destination as! VehicleTabBarController
+        barViewController.vehicle = sender as! Vehicle
+        let nav = barViewController.viewControllers![0] as! UINavigationController
+        let destinationViewController = nav.viewControllers[0] as! ListOfCrashesViewController
+        destinationViewController.vehicle = sender as! Vehicle
+        destinationViewController.nowTypeCrash = .actual
+//            case "history":
+//            let nav = barViewController.viewControllers![1] as! UINavigationController
+//            let destinationViewController = nav.viewControllers[0] as! ListOfCrashesViewController
+//            destinationViewController.vehicle = sender as! Vehicle
+//            destinationViewController.nowTypeCrash = .history
+
     }
 }

@@ -95,20 +95,6 @@ class ListOfCrashesViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
-    
-    @IBAction func changeList(_ sender: Any) {
-        
-        switch chooseListOfCrashesSegmentedControl.selectedSegmentIndex
-        {
-        case 0:
-            nowTypeCrash = .actual
-        case 1:
-            nowTypeCrash = .history
-        default:
-            break
-        }
-        self.listOfCrashesTable.reloadData()
- 
-    }
+
  
 }
