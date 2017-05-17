@@ -17,6 +17,7 @@ class VKHelper: VKDelegate {
     init() {
         VK.config.logToConsole = true
         VK.configure(withAppId: appID, delegate: self)
+        print("Init did finished")
     }
     
     func vkWillAuthorize() -> Set<VK.Scope> {
@@ -26,7 +27,7 @@ class VKHelper: VKDelegate {
     
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
         print("Autorization success")
-        //NotificationCenter.default.post(name: Notification.Name(rawValue: "TestVkDidAuthorize"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "TestVkDidAuthorize"), object: nil)
     }
     
     func vkAutorizationFailedWith(error: AuthError) {
@@ -55,6 +56,9 @@ class VKHelper: VKDelegate {
         print("SwiftyVK: authorize")
     }
     
+    func getState() {
+        print(VK.state)
+    }
     
     
     func logout() {

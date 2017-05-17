@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
         })
         Realm.Configuration.defaultConfiguration = config
+        
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 
