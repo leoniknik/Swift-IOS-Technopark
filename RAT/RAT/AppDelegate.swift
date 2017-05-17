@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftyVK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
         })
         Realm.Configuration.defaultConfiguration = config
+        
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 
@@ -56,5 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        VK.process(url: url, sourceApplication: sourceApplication)
+        return true
+    }
 }
 
