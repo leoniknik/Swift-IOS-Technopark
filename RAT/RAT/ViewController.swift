@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     @IBAction func vkLogIn(_ sender: Any) {
         let vk = VKHelper()
         vk.authorize()
+        vk.getState()
     }
     
     @IBAction func facebookLogIn(_ sender: Any) {
