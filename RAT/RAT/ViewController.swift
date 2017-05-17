@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+
     
     @IBOutlet weak var imageLabelView: UILabel!
     
@@ -28,6 +28,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var vkLogInButton: UIButton!
     
     @IBOutlet weak var facebookLogInButton: UIButton!
+    
+    @IBOutlet weak var fbView: UIView!
+    
+    @IBOutlet weak var vkView: UIView!
     
     @IBAction func logIn(_ sender: Any) {
         // TODO: проверить вводимые поля
@@ -70,6 +74,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(logInCallback(_:)), name: .logInCallback, object: nil)
+        
+        emailTextField.backgroundColor = UIColor(white: 1, alpha: 0)
+        emailTextField.borderStyle = UITextBorderStyle(rawValue: 0)!
+        
+        passwordTextField.backgroundColor = UIColor(white: 1, alpha: 0)
+        passwordTextField.borderStyle = UITextBorderStyle(rawValue: 0)!
+        
+        
+        // сделать navigationBar прозрачным
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
