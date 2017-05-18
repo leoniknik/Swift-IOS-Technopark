@@ -56,16 +56,11 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let barViewController = segue.destination as! VehicleTabBarController
-        barViewController.vehicle = sender as! Vehicle
+        barViewController.vehicle = sender as? Vehicle
         let nav = barViewController.viewControllers![0] as! UINavigationController
         let destinationViewController = nav.viewControllers[0] as! ListOfCrashesViewController
         destinationViewController.vehicle = sender as! Vehicle
         destinationViewController.nowTypeCrash = .actual
-//            case "history":
-//            let nav = barViewController.viewControllers![1] as! UINavigationController
-//            let destinationViewController = nav.viewControllers[0] as! ListOfCrashesViewController
-//            destinationViewController.vehicle = sender as! Vehicle
-//            destinationViewController.nowTypeCrash = .history
 
     }
 }

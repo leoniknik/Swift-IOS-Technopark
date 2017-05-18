@@ -14,19 +14,43 @@ class DataBaseHelper {
     
     static let realm = try! Realm()
     
-    class func setVehicle(person: Person, json: JSON){
-        let vehicle = Vehicle()
-        vehicle.number = json["number"].stringValue
-        vehicle.brand = json["brand"].stringValue
-        vehicle.VIN = json["VIN"].stringValue
-        vehicle.year = json["year"].stringValue
-        vehicle.model = json["model"].stringValue
-        vehicle.id = json["id"].intValue
-        vehicle.owner = person
-        save(object: vehicle)
+    class func deleteVehicles(vehicleIds : [Int]){
+        let vehicles = realm.objects(Vehicle.self)
+        for vehicle in vehicles{
+            let id = vehicle.id
+            if !vehicleIds.contains(id)
+            {
+                //delete
+            }
+        }
+    }
+        
+    
+    class func setVehicle(person: Person, json: JSON)-> Vehicle{
+            let vehicle = Vehicle()
+            vehicle.number = json["number"].stringValue
+            vehicle.brand = json["brand"].stringValue
+            vehicle.VIN = json["VIN"].stringValue
+            vehicle.year = json["year"].stringValue
+            vehicle.model = json["model"].stringValue
+            vehicle.id = json["id"].intValue
+            vehicle.owner = person
+            save(object: vehicle)
+            return vehicle
+    }
+        
+    class func setVehicle(person: Person, vehicle: Vehicle){
+            let vehicle = vehicle
+            vehicle.owner = person
+            save(object: vehicle)
     }
     
-    class func getPerson() -> Person{
+    class func setVehicle( vehicle: Vehicle){
+            let vehicle = vehicle
+            save(object: vehicle)
+    }
+    
+    class func getPerson() -> Person {
         let predicate = NSPredicate(format: "actual == true")
         return realm.objects(Person.self).filter(predicate).first!
     }

@@ -13,7 +13,7 @@ import SwiftyJSON
 class APIHelper {
     
     
-    static let SERVER_IP="http://192.168.1.44:8000"
+    static let SERVER_IP="http://192.168.1.47:8000"
     
     static let SIGNUP_URL = "\(SERVER_IP)/api/signup"
     static let LOGIN_URL = "\(SERVER_IP)/api/signin"
@@ -235,6 +235,30 @@ class APIHelper {
     }
     
     */
+    
+    class func getListsOfVehiclesAndCrashesCallback(_ notification: NSNotification){
+        print("call_back")
+        let person = DataBaseHelper.getPerson()
+        
+        let data = notification.userInfo as! [String : JSON]
+        
+        let jsonVehicles = data["data"]!.arrayValue
+        var vehicleIDs = [Int]()
+        for jsonVehicle in jsonVehicles {
+            let id = jsonVehicle["id"].intValue
+            vehicleIDs.append(id)
+        }
+        DataBaseHelper.deleteVehicles(vehicleIds: vehicleIDs)
+        for jsonVehicle in jsonVehicles {
+            let vehicle = DataBaseHelper.setVehicle(person: person, json: jsonVehicle)
+            
+            let jsonCrashes = jsonVehicle["crashes"].arrayValue
+            for jsonCrash in jsonCrashes {
+                _ = DataBaseHelper.setCrash(vehicle:vehicle, json:jsonCrash)
+            }
+        }
+    }
+    
     class func defaultOnSuccess(json: JSON) -> Void{
         print(json)
     }
