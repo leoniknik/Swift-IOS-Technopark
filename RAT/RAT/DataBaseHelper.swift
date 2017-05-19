@@ -15,12 +15,14 @@ class DataBaseHelper {
     static let realm = try! Realm()
     
     class func deleteVehicles(vehicleIds : [Int]){
-        let vehicles = realm.objects(Vehicle.self)
+        let vehicles = DataBaseHelper.getPerson().vehicles
         for vehicle in vehicles{
             let id = vehicle.id
-            if !vehicleIds.contains(id)
+            if !(vehicleIds.contains(id))
             {
-                //delete
+                try! realm.write {
+                    realm.delete(vehicle)
+                }
             }
         }
     }

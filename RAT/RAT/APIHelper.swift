@@ -26,6 +26,8 @@ class APIHelper {
     static let GET_LIST_OF_OFFERS_URL = "\(SERVER_IP)/api/get_list_of_offers"
     static let GET_SERVICE_URL = "\(SERVER_IP)/api/get_service"
     static let GET_SERVICE_REVIEWS_URL = "\(SERVER_IP)/api/get_service_reviews"
+    //hot download
+    static let GET_LISTS_OF_VEHICLES_AND_CRASHES = "\(SERVER_IP)/api/get_lists_of_vehicles_and_crashes"
     
     static let OK = 0
     static let ERROR = 1
@@ -186,6 +188,8 @@ class APIHelper {
             NotificationCenter.default.post(name: .getListOfReviewsCallback, object: nil, userInfo: data)
         }
     }
+    
+    
     /*
     class func editUserRequest() -> Void {
         
@@ -236,28 +240,29 @@ class APIHelper {
     
     */
     
-    class func getListsOfVehiclesAndCrashesCallback(_ notification: NSNotification){
-        print("call_back")
+    class func getListsOfVehiclesAndCrashesRequest() -> Void {
+        
         let person = DataBaseHelper.getPerson()
         
-        let data = notification.userInfo as! [String : JSON]
+        let parameters: Parameters = [
+            "user_id": person.id
+        ]
         
-        let jsonVehicles = data["data"]!.arrayValue
-        var vehicleIDs = [Int]()
-        for jsonVehicle in jsonVehicles {
-            let id = jsonVehicle["id"].intValue
-            vehicleIDs.append(id)
-        }
-        DataBaseHelper.deleteVehicles(vehicleIds: vehicleIDs)
-        for jsonVehicle in jsonVehicles {
-            let vehicle = DataBaseHelper.setVehicle(person: person, json: jsonVehicle)
-            
-            let jsonCrashes = jsonVehicle["crashes"].arrayValue
-            for jsonCrash in jsonCrashes {
-                _ = DataBaseHelper.setCrash(vehicle:vehicle, json:jsonCrash)
-            }
-        }
+        request(URL: GET_LISTS_OF_VEHICLES_AND_CRASHES, method: .get, parameters: parameters, onSuccess: getListsOfVehiclesAndCrashesOnSuccess, onError: defaultOnError)
     }
+    
+    
+    class func getListsOfVehiclesAndCrashesOnSuccess(json: JSON) -> Void{
+        
+        let code = json["code"].int!
+        if code == OK {
+            let data = json.dictionaryValue
+            print(data)
+            NotificationCenter.default.post(name: .getListsOfVehiclesAndCrashesCallback, object: nil, userInfo: data)
+        }
+        
+    }
+    
     
     class func defaultOnSuccess(json: JSON) -> Void{
         print(json)

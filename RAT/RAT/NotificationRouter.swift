@@ -16,4 +16,5 @@ extension Notification.Name {
     static let getListOfOffersCallback = Notification.Name("getListOfOffersCallback")
     static let getServiceCallback = Notification.Name("getServiceCallback")
     static let getListOfReviewsCallback = Notification.Name("getListOfReviewsCallback")
+    static let getListsOfVehiclesAndCrashesCallback = Notification.Name("getListsOfVehiclesAndCrashesCallback")
 }

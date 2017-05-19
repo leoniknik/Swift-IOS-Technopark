@@ -20,7 +20,7 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
         listOfVehiclesTable.delegate = self
         // listOfCrashesTable.separatorStyle = .none // delete all separators
         listOfVehiclesTable.tableFooterView = UIView() // delete excess separators
-        NotificationCenter.default.addObserver(self, selector: #selector(getVehiclesCallback(_:)), name: .getVehiclesCallback, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getListsOfVehiclesAndCrashesCallback(_:)), name: .getListsOfVehiclesAndCrashesCallback, object: nil)
         person = DataBaseHelper.getPerson()
     }
     
@@ -44,14 +44,36 @@ class ListOfVehiclesViewController: UIViewController, UITableViewDelegate, UITab
         self.performSegue(withIdentifier: "fromListOfVehicleToListOfCrashesSegue", sender: vehicle)
     }
  
-    func getVehiclesCallback(_ notification: NSNotification){
+//    func getVehiclesCallback(_ notification: NSNotification){
+//        let person = DataBaseHelper.getPerson()
+//        let data = notification.userInfo as! [String : JSON]
+//        let vehicles = data["data"]!.arrayValue
+//        for vehicle in vehicles {
+//            DataBaseHelper.setVehicle(person: person, json: vehicle)
+//        }
+//        self.listOfVehiclesTable.reloadData()
+//    }
+    
+    func getListsOfVehiclesAndCrashesCallback(_ notification: NSNotification){
+        print("callback aaaa")
         let person = DataBaseHelper.getPerson()
         let data = notification.userInfo as! [String : JSON]
-        let vehicles = data["data"]!.arrayValue
-        for vehicle in vehicles {
-            DataBaseHelper.setVehicle(person: person, json: vehicle)
+        let jsonVehicles = data["data"]!.arrayValue
+        var vehicleIDs = [Int]()
+        for jsonVehicle in jsonVehicles {
+            let id = jsonVehicle["id"].intValue
+            vehicleIDs.append(id)
         }
-        self.listOfVehiclesTable.reloadData()
+        DataBaseHelper.deleteVehicles(vehicleIds: vehicleIDs)
+        for jsonVehicle in jsonVehicles {
+            let vehicle = DataBaseHelper.setVehicle(person: person, json: jsonVehicle)
+            
+            let jsonCrashes = jsonVehicle["crashes"].arrayValue
+            for jsonCrash in jsonCrashes {
+                _ = DataBaseHelper.setCrash(vehicle:vehicle, json:jsonCrash)
+            }
+        }
+        listOfVehiclesTable.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
