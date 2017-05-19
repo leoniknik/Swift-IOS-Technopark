@@ -13,7 +13,7 @@ import SwiftyJSON
 class APIHelper {
     
     
-    static let SERVER_IP="http://192.168.1.44:8000"
+    static let SERVER_IP="http://192.168.1.47:8000"
     
     static let SIGNUP_URL = "\(SERVER_IP)/api/signup"
     static let LOGIN_URL = "\(SERVER_IP)/api/signin"
@@ -26,6 +26,8 @@ class APIHelper {
     static let GET_LIST_OF_OFFERS_URL = "\(SERVER_IP)/api/get_list_of_offers"
     static let GET_SERVICE_URL = "\(SERVER_IP)/api/get_service"
     static let GET_SERVICE_REVIEWS_URL = "\(SERVER_IP)/api/get_service_reviews"
+    //hot download
+    static let GET_LISTS_OF_VEHICLES_AND_CRASHES = "\(SERVER_IP)/api/get_lists_of_vehicles_and_crashes"
     
     static let OK = 0
     static let ERROR = 1
@@ -186,6 +188,8 @@ class APIHelper {
             NotificationCenter.default.post(name: .getListOfReviewsCallback, object: nil, userInfo: data)
         }
     }
+    
+    
     /*
     class func editUserRequest() -> Void {
         
@@ -235,6 +239,31 @@ class APIHelper {
     }
     
     */
+    
+    class func getListsOfVehiclesAndCrashesRequest() -> Void {
+        
+        let person = DataBaseHelper.getPerson()
+        
+        let parameters: Parameters = [
+            "user_id": person.id
+        ]
+        
+        request(URL: GET_LISTS_OF_VEHICLES_AND_CRASHES, method: .get, parameters: parameters, onSuccess: getListsOfVehiclesAndCrashesOnSuccess, onError: defaultOnError)
+    }
+    
+    
+    class func getListsOfVehiclesAndCrashesOnSuccess(json: JSON) -> Void{
+        
+        let code = json["code"].int!
+        if code == OK {
+            let data = json.dictionaryValue
+            print(data)
+            NotificationCenter.default.post(name: .getListsOfVehiclesAndCrashesCallback, object: nil, userInfo: data)
+        }
+        
+    }
+    
+    
     class func defaultOnSuccess(json: JSON) -> Void{
         print(json)
     }
