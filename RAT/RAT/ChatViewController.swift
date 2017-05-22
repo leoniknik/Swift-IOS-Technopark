@@ -14,11 +14,13 @@ import Photos
 class ChatViewController: JSQMessagesViewController {
     
     var offer = Offer()
+    
+    private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
-    private lazy var messageRef: FIRDatabaseReference = self.channelRef!.child("messages")
+    private lazy var messageRef: FIRDatabaseReference = self.channelRef.child("messages")
     private var newMessageRefHandle: FIRDatabaseHandle?
-    private lazy var usersTypingQuery: FIRDatabaseQuery = self.channelRef!.child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true)
+    private lazy var usersTypingQuery: FIRDatabaseQuery = self.channelRef.child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true)
     lazy var storageRef: FIRStorageReference = FIRStorage.storage().reference(forURL: "gs://testchatapp-7d6d5.appspot.com")
     private let imageURLNotSetKey = "NOTSET"
     private var photoMessageMap = [String: JSQPhotoMediaItem]()
@@ -27,6 +29,9 @@ class ChatViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
+        self.senderDisplayName = DataBaseHelper.getPerson().firstname
+        channelRef = channelRef.child(String(offer.service!.id))
         self.senderId = FIRAuth.auth()?.currentUser?.uid
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
@@ -39,7 +44,6 @@ class ChatViewController: JSQMessagesViewController {
     }
     
 
-    var channelRef: FIRDatabaseReference?
     var channel: Channel? {
         didSet {
             title = channel?.id
@@ -119,7 +123,7 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let itemRef = messageRef.childByAutoId()
-        let messageItem = [ // 2
+        let messageItem = [
             "senderId": senderId!,
             "senderName": senderDisplayName!,
             "text": text!,
@@ -134,7 +138,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     private func observeMessages() {
-        messageRef = channelRef!.child("messages")
+        messageRef = channelRef.child("messages")
         let messageQuery = messageRef.queryLimited(toLast:50)
         newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
             let messageData = snapshot.value as! Dictionary<String, String>
@@ -143,7 +147,7 @@ class ChatViewController: JSQMessagesViewController {
                 self.addMessage(withId: id, name: name, text: text)
                 self.finishReceivingMessage()
             }
-            else if let id = messageData["senderId"] as String!, let photoURL = messageData["photoURL"] as String! { // 1
+            else if let id = messageData["senderId"] as String!, let photoURL = messageData["photoURL"] as String! {
                 if let mediaItem = JSQPhotoMediaItem(maskAsOutgoing: id == self.senderId) {
                     self.addPhotoMessage(withId: id, key: snapshot.key, mediaItem: mediaItem)
                     if photoURL.hasPrefix("gs://") {
@@ -160,9 +164,8 @@ class ChatViewController: JSQMessagesViewController {
             let messageData = snapshot.value as! Dictionary<String, String>
             
             if let photoURL = messageData["photoURL"] as String! {
-                // The photo has been updated.
                 if let mediaItem = self.photoMessageMap[key] {
-                    self.fetchImageDataAtURL(photoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: key) // 4
+                    self.fetchImageDataAtURL(photoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: key)
                 }
             }
         })
@@ -175,7 +178,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     private lazy var userIsTypingRef: FIRDatabaseReference =
-        self.channelRef!.child("typingIndicator").child(self.senderId)
+        self.channelRef.child("typingIndicator").child(self.senderId)
     
     private var localTyping = false
     var isTyping: Bool {
@@ -189,7 +192,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     private func observeTyping() {
-        let typingIndicatorRef = channelRef!.child("typingIndicator")
+        let typingIndicatorRef = channelRef.child("typingIndicator")
         userIsTypingRef = typingIndicatorRef.child(senderId)
         userIsTypingRef.onDisconnectRemoveValue()
         usersTypingQuery.observe(.value) { (data: FIRDataSnapshot) in
@@ -253,7 +256,7 @@ class ChatViewController: JSQMessagesViewController {
                     return
                 }
                 if (metadata?.contentType == "image/gif") {
-                    mediaItem.image = UIImage.gifWithData(data)
+                    mediaItem.image = UIImage.gifWithData(data!)
                 } else {
                     mediaItem.image = UIImage.init(data: data!)
                 }
