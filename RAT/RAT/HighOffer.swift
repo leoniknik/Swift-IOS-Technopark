@@ -1,15 +1,15 @@
 //
-//  Offer.swift
+//  HighOffer.swift
 //  RAT
 //
-//  Created by Kirill on 3/29/17.
+//  Created by Алексаndr on 22.05.17.
 //  Copyright © 2017 RAT. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-class Offer: Object {
+class HighOffer: Object {
     
     dynamic var id: Int = 0
     dynamic var price: Int = 0
@@ -19,7 +19,7 @@ class Offer: Object {
     dynamic var isConfirmed: Bool = false
     dynamic var vehicle: Vehicle?
     dynamic var service: Service?
-    
+    var lowOffers = LinkingObjects(fromType: LowOffer.self, property: "highOffer")
     override static func primaryKey() -> String? {
         return "id"
     }

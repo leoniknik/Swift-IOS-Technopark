@@ -1,22 +1,24 @@
 //
-//  VehicleCell.swift
+//  HighOfferCell.swift
 //  RAT
 //
-//  Created by Kirill on 3/30/17.
+//  Created by Алексаndr on 22.05.17.
 //  Copyright © 2017 RAT. All rights reserved.
 //
 
 import UIKit
 
-class VehicleCell: UITableViewCell {
+class HighOfferCell: UITableViewCell {
+
+    
+    @IBOutlet weak var serviceName: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var isAvalibleLabel: UILabel!
+    @IBOutlet weak var isConfirmedLabel: UILabel!
     
     
-    @IBOutlet weak var brand: UILabel!
-    @IBOutlet weak var number: UILabel!
-    @IBOutlet weak var model: UILabel!
-    //var vehicle:Vehicle?
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var marketLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
