@@ -50,16 +50,31 @@ class DataBaseHelper {
     
     
     class func setVehicle(person: Person, json: JSON)-> Vehicle{
+        let id = json["id"].intValue
+        if let vehicle = DataBaseHelper.getVehicle(id: id) {
+            try! realm.write {
+                vehicle.number = json["number"].stringValue
+                vehicle.brand = json["brand"].stringValue
+                vehicle.VIN = json["VIN"].stringValue
+                vehicle.year = json["year"].stringValue
+                vehicle.model = json["model"].stringValue
+                vehicle.owner = person
+            }
+            return vehicle
+        }
+        else {
             let vehicle = Vehicle()
             vehicle.number = json["number"].stringValue
             vehicle.brand = json["brand"].stringValue
             vehicle.VIN = json["VIN"].stringValue
             vehicle.year = json["year"].stringValue
             vehicle.model = json["model"].stringValue
-            vehicle.id = json["id"].intValue
+            vehicle.id = id
             vehicle.owner = person
             save(object: vehicle)
             return vehicle
+        }
+        
     }
         
     class func setVehicle(person: Person, vehicle: Vehicle){
@@ -73,17 +88,26 @@ class DataBaseHelper {
             save(object: vehicle)
     }
     
+    class func setVehiclePicture(data: NSData, vehicle: Vehicle){
+        try! realm.write {
+            let vehicle = vehicle
+            vehicle.picture = data
+        }
+        //save(object: vehicle)
+    }
+    
+    
     class func getPerson() -> Person {
         let predicate = NSPredicate(format: "actual == true")
         return realm.objects(Person.self).filter(predicate).first!
     }
     
-    class func getVehicle(id:Int) -> Vehicle {
+    class func getVehicle(id: Int) -> Vehicle? {
         let predicate = NSPredicate(format: "id == \(id)")
         return realm.objects(Vehicle.self).filter(predicate).first!
     }
     
-    class func getCrash(id:Int) -> Crash {
+    class func getCrash(id: Int) -> Crash {
         let predicate = NSPredicate(format: "id == \(id)")
         return realm.objects(Crash.self).filter(predicate).first!
     }
