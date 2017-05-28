@@ -23,11 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let config = Realm.Configuration(
 
-            schemaVersion: 13,
+            schemaVersion: 15,
             
             migrationBlock: { migration, oldSchemaVersion in
                 
-                if (oldSchemaVersion < 13) {
+                if (oldSchemaVersion < 15) {
                     
                 }
         })
